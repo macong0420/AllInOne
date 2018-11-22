@@ -1,0 +1,770 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		78087B7A43E3DC1038249D7F /* Pods_AllInOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593BA87FCE571F03E271DEFB /* Pods_AllInOne.framework */; };
+		E24F143621A65913000B4C6F /* LunarFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F143521A65913000B4C6F /* LunarFormatter.swift */; };
+		E256259A21A4F672004A213C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E256259921A4F672004A213C /* AppDelegate.swift */; };
+		E256259C21A4F672004A213C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E256259B21A4F672004A213C /* ViewController.swift */; };
+		E256259F21A4F673004A213C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E256259D21A4F673004A213C /* Main.storyboard */; };
+		E25625A121A4F674004A213C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E25625A021A4F674004A213C /* Assets.xcassets */; };
+		E25625A421A4F674004A213C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E25625A221A4F674004A213C /* LaunchScreen.storyboard */; };
+		E25625AF21A4F674004A213C /* AllInOneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25625AE21A4F674004A213C /* AllInOneTests.swift */; };
+		E25625BA21A4F674004A213C /* AllInOneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25625B921A4F674004A213C /* AllInOneUITests.swift */; };
+		E25625CF21A503E4004A213C /* CommonDefin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25625CE21A503E4004A213C /* CommonDefin.swift */; };
+		E25625D121A50872004A213C /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25625D021A50872004A213C /* SnapKit.framework */; };
+		E25625D321A5094B004A213C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25625D221A5094B004A213C /* Foundation.framework */; };
+		E25625D521A50F35004A213C /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25625D421A50F35004A213C /* CalendarController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E25625AB21A4F674004A213C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E256258E21A4F672004A213C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E256259521A4F672004A213C;
+			remoteInfo = AllInOne;
+		};
+		E25625B621A4F674004A213C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E256258E21A4F672004A213C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E256259521A4F672004A213C;
+			remoteInfo = AllInOne;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0BD4C38962B936597C7CFA14 /* Pods-AllInOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllInOne.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne.release.xcconfig"; sourceTree = "<group>"; };
+		593BA87FCE571F03E271DEFB /* Pods_AllInOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllInOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E24F143521A65913000B4C6F /* LunarFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunarFormatter.swift; path = AllInOne/Calernder/LunarFormatter.swift; sourceTree = SOURCE_ROOT; };
+		E256259621A4F672004A213C /* AllInOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllInOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E256259921A4F672004A213C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E256259B21A4F672004A213C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E256259E21A4F673004A213C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E25625A021A4F674004A213C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E25625A321A4F674004A213C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E25625A521A4F674004A213C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E25625AA21A4F674004A213C /* AllInOneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AllInOneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E25625AE21A4F674004A213C /* AllInOneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInOneTests.swift; sourceTree = "<group>"; };
+		E25625B021A4F674004A213C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E25625B521A4F674004A213C /* AllInOneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AllInOneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E25625B921A4F674004A213C /* AllInOneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllInOneUITests.swift; sourceTree = "<group>"; };
+		E25625BB21A4F674004A213C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E25625CE21A503E4004A213C /* CommonDefin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDefin.swift; sourceTree = "<group>"; };
+		E25625D021A50872004A213C /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E25625D221A5094B004A213C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E25625D421A50F35004A213C /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		E2C6F6B721A551C200BFCDA4 /* Objc-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objc-Bridge-Header.h"; sourceTree = "<group>"; };
+		FFF19CD84A001EEE63D337EE /* Pods-AllInOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllInOne.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E256259321A4F672004A213C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E25625D321A5094B004A213C /* Foundation.framework in Frameworks */,
+				E25625D121A50872004A213C /* SnapKit.framework in Frameworks */,
+				78087B7A43E3DC1038249D7F /* Pods_AllInOne.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25625A721A4F674004A213C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25625B221A4F674004A213C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		215112A854BB4BDC31BADB69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E25625D221A5094B004A213C /* Foundation.framework */,
+				E25625D021A50872004A213C /* SnapKit.framework */,
+				593BA87FCE571F03E271DEFB /* Pods_AllInOne.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B18F32DB4C51FC2877A78E20 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFF19CD84A001EEE63D337EE /* Pods-AllInOne.debug.xcconfig */,
+				0BD4C38962B936597C7CFA14 /* Pods-AllInOne.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E256258D21A4F672004A213C = {
+			isa = PBXGroup;
+			children = (
+				E256259821A4F672004A213C /* AllInOne */,
+				E25625AD21A4F674004A213C /* AllInOneTests */,
+				E25625B821A4F674004A213C /* AllInOneUITests */,
+				E256259721A4F672004A213C /* Products */,
+				B18F32DB4C51FC2877A78E20 /* Pods */,
+				215112A854BB4BDC31BADB69 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E256259721A4F672004A213C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E256259621A4F672004A213C /* AllInOne.app */,
+				E25625AA21A4F674004A213C /* AllInOneTests.xctest */,
+				E25625B521A4F674004A213C /* AllInOneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E256259821A4F672004A213C /* AllInOne */ = {
+			isa = PBXGroup;
+			children = (
+				E256259921A4F672004A213C /* AppDelegate.swift */,
+				E25625CB21A502CB004A213C /* Main */,
+				E25625C721A502CB004A213C /* Calernder */,
+				E25625CC21A502CB004A213C /* CommonDefine */,
+				E25625CD21A502CB004A213C /* Tools */,
+				E256259D21A4F673004A213C /* Main.storyboard */,
+				E25625A021A4F674004A213C /* Assets.xcassets */,
+				E25625A221A4F674004A213C /* LaunchScreen.storyboard */,
+				E25625A521A4F674004A213C /* Info.plist */,
+				E2C6F6B721A551C200BFCDA4 /* Objc-Bridge-Header.h */,
+			);
+			path = AllInOne;
+			sourceTree = "<group>";
+		};
+		E25625AD21A4F674004A213C /* AllInOneTests */ = {
+			isa = PBXGroup;
+			children = (
+				E25625AE21A4F674004A213C /* AllInOneTests.swift */,
+				E25625B021A4F674004A213C /* Info.plist */,
+			);
+			path = AllInOneTests;
+			sourceTree = "<group>";
+		};
+		E25625B821A4F674004A213C /* AllInOneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E25625B921A4F674004A213C /* AllInOneUITests.swift */,
+				E25625BB21A4F674004A213C /* Info.plist */,
+			);
+			path = AllInOneUITests;
+			sourceTree = "<group>";
+		};
+		E25625C721A502CB004A213C /* Calernder */ = {
+			isa = PBXGroup;
+			children = (
+				E25625C821A502CB004A213C /* Controller */,
+				E25625C921A502CB004A213C /* Model */,
+				E25625CA21A502CB004A213C /* View */,
+			);
+			path = Calernder;
+			sourceTree = "<group>";
+		};
+		E25625C821A502CB004A213C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E25625D421A50F35004A213C /* CalendarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E25625C921A502CB004A213C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E25625CA21A502CB004A213C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E24F143521A65913000B4C6F /* LunarFormatter.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E25625CB21A502CB004A213C /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E256259B21A4F672004A213C /* ViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E25625CC21A502CB004A213C /* CommonDefine */ = {
+			isa = PBXGroup;
+			children = (
+				E25625CE21A503E4004A213C /* CommonDefin.swift */,
+			);
+			path = CommonDefine;
+			sourceTree = "<group>";
+		};
+		E25625CD21A502CB004A213C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E256259521A4F672004A213C /* AllInOne */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E25625BE21A4F674004A213C /* Build configuration list for PBXNativeTarget "AllInOne" */;
+			buildPhases = (
+				5FA649A9F4B57FB6617C593A /* [CP] Check Pods Manifest.lock */,
+				E256259221A4F672004A213C /* Sources */,
+				E256259321A4F672004A213C /* Frameworks */,
+				E256259421A4F672004A213C /* Resources */,
+				D149614698E4C00DC1390CEF /* [CP] Embed Pods Frameworks */,
+				F221388AC80A91E42632C2FB /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AllInOne;
+			productName = AllInOne;
+			productReference = E256259621A4F672004A213C /* AllInOne.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E25625A921A4F674004A213C /* AllInOneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E25625C121A4F674004A213C /* Build configuration list for PBXNativeTarget "AllInOneTests" */;
+			buildPhases = (
+				E25625A621A4F674004A213C /* Sources */,
+				E25625A721A4F674004A213C /* Frameworks */,
+				E25625A821A4F674004A213C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E25625AC21A4F674004A213C /* PBXTargetDependency */,
+			);
+			name = AllInOneTests;
+			productName = AllInOneTests;
+			productReference = E25625AA21A4F674004A213C /* AllInOneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E25625B421A4F674004A213C /* AllInOneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E25625C421A4F674004A213C /* Build configuration list for PBXNativeTarget "AllInOneUITests" */;
+			buildPhases = (
+				E25625B121A4F674004A213C /* Sources */,
+				E25625B221A4F674004A213C /* Frameworks */,
+				E25625B321A4F674004A213C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E25625B721A4F674004A213C /* PBXTargetDependency */,
+			);
+			name = AllInOneUITests;
+			productName = AllInOneUITests;
+			productReference = E25625B521A4F674004A213C /* AllInOneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E256258E21A4F672004A213C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "马聪聪";
+				TargetAttributes = {
+					E256259521A4F672004A213C = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					E25625A921A4F674004A213C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E256259521A4F672004A213C;
+					};
+					E25625B421A4F674004A213C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = E256259521A4F672004A213C;
+					};
+				};
+			};
+			buildConfigurationList = E256259121A4F672004A213C /* Build configuration list for PBXProject "AllInOne" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E256258D21A4F672004A213C;
+			productRefGroup = E256259721A4F672004A213C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E256259521A4F672004A213C /* AllInOne */,
+				E25625A921A4F674004A213C /* AllInOneTests */,
+				E25625B421A4F674004A213C /* AllInOneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E256259421A4F672004A213C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E25625A421A4F674004A213C /* LaunchScreen.storyboard in Resources */,
+				E25625A121A4F674004A213C /* Assets.xcassets in Resources */,
+				E256259F21A4F673004A213C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25625A821A4F674004A213C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25625B321A4F674004A213C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5FA649A9F4B57FB6617C593A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AllInOne-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D149614698E4C00DC1390CEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F221388AC80A91E42632C2FB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E256259221A4F672004A213C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E256259C21A4F672004A213C /* ViewController.swift in Sources */,
+				E25625D521A50F35004A213C /* CalendarController.swift in Sources */,
+				E24F143621A65913000B4C6F /* LunarFormatter.swift in Sources */,
+				E25625CF21A503E4004A213C /* CommonDefin.swift in Sources */,
+				E256259A21A4F672004A213C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25625A621A4F674004A213C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E25625AF21A4F674004A213C /* AllInOneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E25625B121A4F674004A213C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E25625BA21A4F674004A213C /* AllInOneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E25625AC21A4F674004A213C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E256259521A4F672004A213C /* AllInOne */;
+			targetProxy = E25625AB21A4F674004A213C /* PBXContainerItemProxy */;
+		};
+		E25625B721A4F674004A213C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E256259521A4F672004A213C /* AllInOne */;
+			targetProxy = E25625B621A4F674004A213C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E256259D21A4F673004A213C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E256259E21A4F673004A213C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E25625A221A4F674004A213C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E25625A321A4F674004A213C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E25625BC21A4F674004A213C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E25625BD21A4F674004A213C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E25625BF21A4F674004A213C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFF19CD84A001EEE63D337EE /* Pods-AllInOne.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = AllInOne/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MCSwift.AllInOne;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/macongcong/Desktop/MCDemo/SwiftDemo/AllInOne/AllInOne/Objc-Bridge-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Debug;
+		};
+		E25625C021A4F674004A213C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BD4C38962B936597C7CFA14 /* Pods-AllInOne.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = AllInOne/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MCSwift.AllInOne;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/macongcong/Desktop/MCDemo/SwiftDemo/AllInOne/AllInOne/Objc-Bridge-Header.h";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "$(PODS_ROOT)/**";
+			};
+			name = Release;
+		};
+		E25625C221A4F674004A213C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AllInOneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MCSwift.AllInOneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AllInOne.app/AllInOne";
+			};
+			name = Debug;
+		};
+		E25625C321A4F674004A213C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AllInOneTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MCSwift.AllInOneTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AllInOne.app/AllInOne";
+			};
+			name = Release;
+		};
+		E25625C521A4F674004A213C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AllInOneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MCSwift.AllInOneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AllInOne;
+			};
+			name = Debug;
+		};
+		E25625C621A4F674004A213C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = AllInOneUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = MCSwift.AllInOneUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = AllInOne;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E256259121A4F672004A213C /* Build configuration list for PBXProject "AllInOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E25625BC21A4F674004A213C /* Debug */,
+				E25625BD21A4F674004A213C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E25625BE21A4F674004A213C /* Build configuration list for PBXNativeTarget "AllInOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E25625BF21A4F674004A213C /* Debug */,
+				E25625C021A4F674004A213C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E25625C121A4F674004A213C /* Build configuration list for PBXNativeTarget "AllInOneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E25625C221A4F674004A213C /* Debug */,
+				E25625C321A4F674004A213C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E25625C421A4F674004A213C /* Build configuration list for PBXNativeTarget "AllInOneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E25625C521A4F674004A213C /* Debug */,
+				E25625C621A4F674004A213C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E256258E21A4F672004A213C /* Project object */;
+}
