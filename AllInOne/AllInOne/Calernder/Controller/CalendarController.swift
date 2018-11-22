@@ -9,7 +9,7 @@
 import UIKit
 import EventKit
 
-class CalendarController: UIViewController,FSCalendarDataSource, FSCalendarDelegate {
+class CalendarController: UIViewController {
     private weak var calendar: FSCalendar!
     fileprivate var gregorian = Calendar(identifier: .chinese)
     fileprivate let formatter: DateFormatter = {
@@ -59,6 +59,18 @@ class CalendarController: UIViewController,FSCalendarDataSource, FSCalendarDeleg
         super.viewDidLoad()
         self.title = "FSCalendar"
     }
+    
+    
+    
+}
+
+//网络请求
+extension CalendarController {
+    
+}
+
+//MARK:- calenda代理
+extension CalendarController: FSCalendarDataSource, FSCalendarDelegate {
     
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         if monthPosition == .previous || monthPosition == .next {

@@ -8,6 +8,8 @@
 
 import UIKit
 
+let APPKEY = "28da3fa01d240"
+
 let ScreenW : CGFloat = UIScreen.main.bounds.size.width
 let ScreenH : CGFloat = UIScreen.main.bounds.size.height
 
