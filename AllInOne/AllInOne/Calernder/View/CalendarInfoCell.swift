@@ -1,5 +1,5 @@
 //
-//  CalendarInfoView.swift
+//  CalendarInfoCell.swift
 //  AllInOne
 //
 //  Created by 马聪聪 on 2018/11/23.
@@ -9,14 +9,14 @@
 import UIKit
 import SnapKit
 
-class CalendarInfoView: UIView {
-    
-    lazy var contentView: UIView = {
+class CalendarInfoCell: UITableViewCell {
+
+    lazy var backgView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.white
         return view
     }()
-
+    
     lazy var suitImageView : UIImageView  = {
         let img = UIImage(named: "ico_yi_19x19_")!
         let imgV = UIImageView(frame: CGRect(x: kMagin, y: kMagin, width: img.size.width, height: img.size.height))
@@ -30,7 +30,7 @@ class CalendarInfoView: UIView {
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
-
+    
     
     lazy var avoidIamgeView : UIImageView = {
         let img = UIImage(named: "ico_ji_19x19_")!
@@ -61,7 +61,7 @@ class CalendarInfoView: UIView {
     lazy var lunarLabel : UILabel = {
         let label = UILabel()
         label.font = UIFont.boldSystemFont(ofSize: 70)
-//        label.font = UIFont(name: "AvenirNext-Regular", size: 70)
+        //        label.font = UIFont(name: "AvenirNext-Regular", size: 70)
         label.textColor = UIColor.brown
         label.textAlignment = .center
         return label
@@ -74,11 +74,22 @@ class CalendarInfoView: UIView {
             lunarLabel.text = model?.lunar
         }
     }
-
-     init() {
-        super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        setupUI()
         
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -86,13 +97,13 @@ class CalendarInfoView: UIView {
     }
     
     private func setupUI() {
-        addSubview(suitImageView)
-        addSubview(suitLabel)
-        addSubview(avoidIamgeView)
-        addSubview(daindainImageView)
-        addSubview(daindainImageView1)
-        addSubview(avoidLabel)
-        addSubview(lunarLabel)
+        contentView.addSubview(suitImageView)
+        contentView.addSubview(suitLabel)
+        contentView.addSubview(avoidIamgeView)
+        contentView.addSubview(daindainImageView)
+        contentView.addSubview(daindainImageView1)
+        contentView.addSubview(avoidLabel)
+        contentView.addSubview(lunarLabel)
         
         daindainImageView.snp.makeConstraints { (make) in
             make.left.equalTo(self.safeAreaLayoutGuide.snp.left).offset(10)
@@ -130,7 +141,6 @@ class CalendarInfoView: UIView {
         }
         
         self.backgroundColor = UIColor.white
-        
     }
     
 }
