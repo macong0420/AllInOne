@@ -8,6 +8,8 @@
 
 import UIKit
 import EventKit
+import Alamofire
+import SwiftyJSON
 
 class CalendarController: UIViewController {
     private weak var calendar: FSCalendar!
@@ -25,6 +27,12 @@ class CalendarController: UIViewController {
     }
     
     fileprivate let lunarFormatter = LunarFormatter()
+    
+    lazy var calendarView : CalendarInfoView = {
+       let view = CalendarInfoView()
+        view.frame = CGRect(x: 0, y: 400, width: ScreenW, height: 400)
+        return view
+    }()
     
     override func loadView() {
         
@@ -57,16 +65,36 @@ class CalendarController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "FSCalendar"
+        self.title = "万年历"
+        view.addSubview(calendarView)
+        requetst()
     }
-    
-    
     
 }
 
 //网络请求
 extension CalendarController {
     
+    private func requetst() {
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyy-MM-dd"
+        let stringTime = dateFormatter.string(from: date)
+        
+        let params = ["key":APPKEY,"date":stringTime]
+        Alamofire.request(kCalendarAPI, method: .get, parameters: params).responseJSON { (response) in
+            
+            switch response.result {
+            case .success:
+                let json = JSON(response.result.value!)
+                let model = CalendarModel(jsonData: json)
+                self.calendarView.model = model
+                
+            case .failure:
+                print("失败")
+            }
+        }
+    }
 }
 
 //MARK:- calenda代理

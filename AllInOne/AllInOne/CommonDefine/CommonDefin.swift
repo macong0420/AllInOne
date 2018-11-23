@@ -9,9 +9,12 @@
 import UIKit
 
 let APPKEY = "28da3fa01d240"
+let kCalendarAPI = "http://apicloud.mob.com/appstore/calendar/day"
 
 let ScreenW : CGFloat = UIScreen.main.bounds.size.width
 let ScreenH : CGFloat = UIScreen.main.bounds.size.height
+
+let kMagin : CGFloat = 20
 
 var StatusBarH : CGFloat = isIPhoneXType() ? 44 : 20
 var NavgationH : CGFloat = isIPhoneXType() ? 88 : 64
