@@ -12,6 +12,7 @@ import Alamofire
 import SwiftyJSON
 
 class CalendarController: UIViewController {
+    //属性
     private weak var calendar: FSCalendar!
     fileprivate var gregorian = Calendar(identifier: .chinese)
     fileprivate let formatter: DateFormatter = {
@@ -47,12 +48,18 @@ class CalendarController: UIViewController {
         calendar.backgroundColor = UIColor.white
         self.view.addSubview(calendar)
         self.calendar = calendar
+        calendar.snp.makeConstraints { (make) in
+            make.top.equalTo((self.navigationController?.navigationBar.frame.maxY)!)
+            make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left)
+            make.right.equalTo(0)
+            make.height.equalTo(400)
+        }
         
         calendar.locale = NSLocale(localeIdentifier: "zh-CN") as Locale
         self.lunar = true
         
-        calendar.calendarHeaderView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        calendar.calendarWeekdayView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
+//        calendar.calendarHeaderView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
+//        calendar.calendarWeekdayView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
         calendar.appearance.eventSelectionColor = UIColor.white
         calendar.appearance.eventOffset = CGPoint(x: 0, y: -7)
         calendar.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 14)
@@ -67,16 +74,24 @@ class CalendarController: UIViewController {
         super.viewDidLoad()
         self.title = "万年历"
         view.addSubview(calendarView)
-        requetst()
+        subViewsLayut()
+        requetst(date: Date())
     }
     
+}
+
+//y控件约束
+extension CalendarController {
+    private func subViewsLayut() {
+        
+    }
 }
 
 //网络请求
 extension CalendarController {
     
-    private func requetst() {
-        let date = Date()
+    private func requetst(date: Date) {
+//        let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyy-MM-dd"
         let stringTime = dateFormatter.string(from: date)
@@ -104,6 +119,8 @@ extension CalendarController: FSCalendarDataSource, FSCalendarDelegate {
         if monthPosition == .previous || monthPosition == .next {
             calendar.setCurrentPage(date, animated: true)
         }
+        
+        requetst(date: date)
     }
     
     func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {

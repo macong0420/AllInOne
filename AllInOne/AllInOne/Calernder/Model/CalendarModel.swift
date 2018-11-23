@@ -17,6 +17,7 @@ class CalendarModel: NSObject {
     var zodiac : String? //生肖
     var lunar : String? //农历
     var lunarYear : String? //农历年
+    var date: String?
     
         init(jsonData: JSON) {
             let resultDic = jsonData["result"].dictionary
@@ -26,6 +27,7 @@ class CalendarModel: NSObject {
             zodiac = resultDic?["zodiac"]!.stringValue
             lunar = resultDic?["lunar"]?.stringValue
             lunarYear = resultDic?["lunarYear"]?.stringValue
+            date = resultDic?["date"]?.stringValue
         }
 }
 /*

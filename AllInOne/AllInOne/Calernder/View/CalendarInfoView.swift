@@ -10,6 +10,12 @@ import UIKit
 import SnapKit
 
 class CalendarInfoView: UIView {
+    
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.white
+        return view
+    }()
 
     lazy var suitImageView : UIImageView  = {
         let img = UIImage(named: "ico_yi_19x19_")!
@@ -19,7 +25,9 @@ class CalendarInfoView: UIView {
     }()
     
     lazy var suitLabel : UILabel = {
-        let label = UILabel(frame: CGRect(x: kMagin, y: suitImageView.frame.origin.y+28+10, width: ScreenW-kMagin*2, height: 28))
+        let label = UILabel(frame: CGRect(x: kMagin, y: suitImageView.frame.origin.y+28+10, width: ScreenW-kMagin*2, height: 50))
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
 
@@ -36,11 +44,34 @@ class CalendarInfoView: UIView {
         let imgView = UIImageView(image: img)
         return imgView
     }()
-//    var avoidLabel : UILabel?
+    
+    lazy var daindainImageView1 : UIImageView = {
+        let img = UIImage(named: "diandiandiandian")
+        let imgView = UIImageView(image: img)
+        return imgView
+    }()
+    
+    lazy var avoidLabel : UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = UIFont.systemFont(ofSize: 16)
+        return label
+    }()
+    
+    lazy var lunarLabel : UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 70)
+//        label.font = UIFont(name: "AvenirNext-Regular", size: 70)
+        label.textColor = UIColor.brown
+        label.textAlignment = .center
+        return label
+    }()
     
     var model: CalendarModel? {
         didSet{
             suitLabel.text = model?.suit
+            avoidLabel.text = model?.avoid
+            lunarLabel.text = model?.lunar
         }
     }
 
@@ -59,6 +90,9 @@ class CalendarInfoView: UIView {
         addSubview(suitLabel)
         addSubview(avoidIamgeView)
         addSubview(daindainImageView)
+        addSubview(daindainImageView1)
+        addSubview(avoidLabel)
+        addSubview(lunarLabel)
         
         daindainImageView.snp.makeConstraints { (make) in
             make.left.equalTo(self.safeAreaLayoutGuide.snp.left).offset(10)
@@ -67,8 +101,51 @@ class CalendarInfoView: UIView {
             make.height.equalTo(daindainImageView.frame.size.height)
         }
         
+        avoidIamgeView.snp.makeConstraints { (make) in
+            make.left.equalTo(kMagin)
+            make.top.equalTo(suitLabel.snp.bottom).offset(10)
+            make.height.equalTo(avoidIamgeView.frame.size.height)
+            make.width.equalTo(avoidIamgeView.frame.size.width)
+        }
+        
+        daindainImageView1.snp.makeConstraints { (make) in
+            make.left.equalTo(self.safeAreaLayoutGuide.snp.left).offset(10)
+            make.top.equalTo(avoidIamgeView.snp.bottom).offset(10)
+            make.right.equalTo(self.safeAreaLayoutGuide.snp.right).offset(-10)
+            make.height.equalTo(daindainImageView.frame.size.height)
+        }
+        
+        avoidLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(kMagin)
+            make.top.equalTo(daindainImageView1.snp.bottom).offset(10)
+            make.height.equalTo(50)
+            make.right.equalTo(kMagin)
+        }
+        
+        lunarLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(kMagin)
+            make.right.equalTo(-kMagin)
+            make.top.equalTo(avoidLabel.snp.bottom).offset(20)
+            make.height.equalTo(70)
+        }
+        
         self.backgroundColor = UIColor.white
         
+        PrintFonts()
+        
     }
+    
+    func PrintFonts() {
+                        
+            let familyNames = UIFont.familyNames
+            var index:Int = 0
+            for familyName in familyNames {
+                let fontNames = UIFont.fontNames(forFamilyName: familyName as String)
+                    for fontName in fontNames {
+                        index += 1
+                        print("序号\(index):\(fontName)")
+                   }
+              }
+        }
     
 }
