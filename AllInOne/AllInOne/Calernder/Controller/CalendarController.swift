@@ -12,10 +12,13 @@ import Alamofire
 import SwiftyJSON
 
 let kCalendarInfoCellID = "kCalendarInfoCellID"
+let kCalendarHistoryCellID = "kCalendarHistoryCellID"
 
 class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     //属性
     private weak var calendar: FSCalendar!
+    fileprivate let lunarFormatter = LunarFormatter()
+    
     fileprivate var gregorian = Calendar(identifier: .chinese)
     fileprivate let formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -39,12 +42,11 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         }
     }
     
-    fileprivate let lunarFormatter = LunarFormatter()
-    
     lazy var tableView: UITableView = {
         let tabV = UITableView(frame: CGRect(x: 0, y: 400, width: ScreenW, height: ScreenH-300), style: .plain)
-        tabV.backgroundColor = UIColor.orange
+        tabV.backgroundColor = UIColor.groupTableViewBackground
         tabV.register(CalendarInfoCell.self, forCellReuseIdentifier: kCalendarInfoCellID)
+        tabV.register(CalendarTodayHistoryCell.self, forCellReuseIdentifier: kCalendarHistoryCellID)
         tabV.delegate = self
         tabV.dataSource = self
         return tabV
@@ -52,18 +54,11 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     
     var model: CalendarModel?
     
-//    lazy var calendarView : CalendarInfoView = {
-//       let view = CalendarInfoView()
-//        view.frame = CGRect(x: 0, y: 400, width: ScreenW, height: 400)
-//        return view
-//    }()
-    
+    //--------------------系统方法重写----------------------
     override func loadView() {
-        
         let view = UIView(frame: UIScreen.main.bounds)
         view.backgroundColor = UIColor.groupTableViewBackground
         self.view = view
-        
         let height: CGFloat = UIDevice.current.model.hasPrefix("iPad") ? 400 : 300
         let calendar = FSCalendar(frame: CGRect(x: 0, y: self.navigationController!.navigationBar.frame.maxY, width: self.view.bounds.width, height: height))
         calendar.dataSource = self
@@ -80,7 +75,6 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         
         calendar.locale = NSLocale(localeIdentifier: "zh-CN") as Locale
         self.lunar = true
-        
         calendar.appearance.eventSelectionColor = UIColor.white
         calendar.appearance.eventOffset = CGPoint(x: 0, y: -7)
         calendar.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 14)
@@ -89,7 +83,6 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         calendar.appearance.headerTitleColor = UIColor.black
         calendar.appearance.headerTitleFont = UIFont.boldSystemFont(ofSize: 18)
         calendar.swipeToChooseGesture.isEnabled = true
-        
     }
     
     override func viewDidLoad() {
@@ -98,14 +91,12 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         self.view.addSubview(tableView)
         self.view.addGestureRecognizer(self.scopeGesture)
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
-//        view.addSubview(calendarView)
         subViewsLayut()
         requetst(date: Date())
     }
-    
 }
 
-//y控件约束
+//控件约束
 extension CalendarController {
     private func subViewsLayut() {
         self.tableView.snp.makeConstraints { (make) in
@@ -121,7 +112,6 @@ extension CalendarController {
 extension CalendarController {
     
     private func requetst(date: Date) {
-//        let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyy-MM-dd"
         let stringTime = dateFormatter.string(from: date)
@@ -150,7 +140,6 @@ extension CalendarController: FSCalendarDataSource, FSCalendarDelegate {
         if monthPosition == .previous || monthPosition == .next {
             calendar.setCurrentPage(date, animated: true)
         }
-        
         requetst(date: date)
     }
     
@@ -182,8 +171,6 @@ extension CalendarController: FSCalendarDataSource, FSCalendarDelegate {
         }
         return shouldBegin
     }
-    
-    
 }
 
 extension CalendarController: UITableViewDelegate,UITableViewDataSource {
@@ -194,17 +181,29 @@ extension CalendarController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        if indexPath.row == 0 {
+                return 300
+        } else {
+            return 200
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CalendarInfoCell = tableView.dequeueReusableCell(withIdentifier: kCalendarInfoCellID)! as! CalendarInfoCell
-        cell.model = self.model
-        return cell
+        
+        
+        if indexPath.row == 0 {
+            let cell: CalendarInfoCell = tableView.dequeueReusableCell(withIdentifier: kCalendarInfoCellID)! as! CalendarInfoCell
+            cell.model = self.model
+            return cell
+        } else {
+            let cell: CalendarTodayHistoryCell = tableView.dequeueReusableCell(withIdentifier: kCalendarHistoryCellID)! as! CalendarTodayHistoryCell
+//            cell.model = self.model
+            return cell
+        }
     }
     
 }

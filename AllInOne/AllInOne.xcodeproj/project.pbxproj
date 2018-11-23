@@ -23,8 +23,8 @@
 		E2602CB121A7990E008A3A06 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2602CB021A7990E008A3A06 /* Alamofire.framework */; };
 		E2602CB621A7A0AE008A3A06 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2602CB521A7A0AE008A3A06 /* CalendarModel.swift */; };
 		E2602CB821A7A3F8008A3A06 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2602CB721A7A3F8008A3A06 /* CommonModel.swift */; };
-		E2602CBA21A7A7AD008A3A06 /* CalendarInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2602CB921A7A7AD008A3A06 /* CalendarInfoView.swift */; };
 		E2602CC221A80270008A3A06 /* CalendarInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2602CC121A80270008A3A06 /* CalendarInfoCell.swift */; };
+		E2602CC421A80B1A008A3A06 /* CalendarTodayHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2602CC321A80B1A008A3A06 /* CalendarTodayHistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +68,8 @@
 		E2602CB021A7990E008A3A06 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2602CB521A7A0AE008A3A06 /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
 		E2602CB721A7A3F8008A3A06 /* CommonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
-		E2602CB921A7A7AD008A3A06 /* CalendarInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInfoView.swift; sourceTree = "<group>"; };
 		E2602CC121A80270008A3A06 /* CalendarInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInfoCell.swift; sourceTree = "<group>"; };
+		E2602CC321A80B1A008A3A06 /* CalendarTodayHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTodayHistoryCell.swift; sourceTree = "<group>"; };
 		E2C6F6B721A551C200BFCDA4 /* Objc-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objc-Bridge-Header.h"; sourceTree = "<group>"; };
 		FFF19CD84A001EEE63D337EE /* Pods-AllInOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllInOne.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -202,8 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				E24F143521A65913000B4C6F /* LunarFormatter.swift */,
-				E2602CB921A7A7AD008A3A06 /* CalendarInfoView.swift */,
 				E2602CC121A80270008A3A06 /* CalendarInfoCell.swift */,
+				E2602CC321A80B1A008A3A06 /* CalendarTodayHistoryCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -446,9 +446,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2602CC421A80B1A008A3A06 /* CalendarTodayHistoryCell.swift in Sources */,
 				E256259C21A4F672004A213C /* ViewController.swift in Sources */,
 				E2602CB621A7A0AE008A3A06 /* CalendarModel.swift in Sources */,
-				E2602CBA21A7A7AD008A3A06 /* CalendarInfoView.swift in Sources */,
 				E25625D521A50F35004A213C /* CalendarController.swift in Sources */,
 				E2602CB821A7A3F8008A3A06 /* CommonModel.swift in Sources */,
 				E24F143621A65913000B4C6F /* LunarFormatter.swift in Sources */,
