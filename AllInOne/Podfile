@@ -8,4 +8,5 @@ pod 'SnapKit', '~> 4.0.0'
 pod 'FSCalendar'
 pod 'Alamofire', '~> 4.7'
 pod 'SwiftyJSON'
+pod 'Hue'
 end

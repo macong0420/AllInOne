@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import Hue
 
 class CalendarInfoCell: UITableViewCell {
 
@@ -45,12 +46,14 @@ class CalendarInfoCell: UITableViewCell {
         return imgView
     }()
     
+    /// 点点...........
     lazy var daindainImageView1 : UIImageView = {
         let img = UIImage(named: "diandiandiandian")
         let imgView = UIImageView(image: img)
         return imgView
     }()
     
+    /// 忌
     lazy var avoidLabel : UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -58,11 +61,11 @@ class CalendarInfoCell: UITableViewCell {
         return label
     }()
     
+    
     lazy var lunarLabel : UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 70)
-        //        label.font = UIFont(name: "AvenirNext-Regular", size: 70)
-        label.textColor = UIColor.brown
+        label.font = UIFont(name: "H-GungSeo", size: 50)
+        label.textColor = UIColor(hex: "#544844")
         label.textAlignment = .center
         return label
     }()
@@ -104,6 +107,15 @@ class CalendarInfoCell: UITableViewCell {
         contentView.addSubview(daindainImageView1)
         contentView.addSubview(avoidLabel)
         contentView.addSubview(lunarLabel)
+        
+        var i = 0
+        for family: String in UIFont.familyNames {
+            print("\(i)---项目字体---\(family)")
+            for names: String in UIFont.fontNames(forFamilyName: family) {
+                print("--- font \(names)")
+            }
+            i += 1
+        }
         
         daindainImageView.snp.makeConstraints { (make) in
             make.left.equalTo(self.safeAreaLayoutGuide.snp.left).offset(10)

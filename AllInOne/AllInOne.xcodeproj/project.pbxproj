@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		78087B7A43E3DC1038249D7F /* Pods_AllInOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593BA87FCE571F03E271DEFB /* Pods_AllInOne.framework */; };
+		E213655A21CA29A600B57669 /* H-GungSeo2.2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E213655921CA299100B57669 /* H-GungSeo2.2.ttf */; };
 		E24F143621A65913000B4C6F /* LunarFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F143521A65913000B4C6F /* LunarFormatter.swift */; };
 		E256259A21A4F672004A213C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E256259921A4F672004A213C /* AppDelegate.swift */; };
 		E256259C21A4F672004A213C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E256259B21A4F672004A213C /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		0BD4C38962B936597C7CFA14 /* Pods-AllInOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllInOne.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne.release.xcconfig"; sourceTree = "<group>"; };
 		593BA87FCE571F03E271DEFB /* Pods_AllInOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllInOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E213655921CA299100B57669 /* H-GungSeo2.2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "H-GungSeo2.2.ttf"; sourceTree = "<group>"; };
 		E24F143521A65913000B4C6F /* LunarFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunarFormatter.swift; path = AllInOne/Calernder/LunarFormatter.swift; sourceTree = SOURCE_ROOT; };
 		E256259621A4F672004A213C /* AllInOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllInOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E256259921A4F672004A213C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 		E25625CD21A502CB004A213C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E213655921CA299100B57669 /* H-GungSeo2.2.ttf */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E213655A21CA29A600B57669 /* H-GungSeo2.2.ttf in Resources */,
 				E25625A421A4F674004A213C /* LaunchScreen.storyboard in Resources */,
 				E25625A121A4F674004A213C /* Assets.xcassets in Resources */,
 				E256259F21A4F673004A213C /* Main.storyboard in Resources */,
@@ -403,6 +407,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -412,6 +417,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
