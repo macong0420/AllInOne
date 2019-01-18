@@ -100,6 +100,7 @@ class CalendarInfoCell: UITableViewCell {
     }
     
     private func setupUI() {
+        selectionStyle = .none
         contentView.addSubview(suitImageView)
         contentView.addSubview(suitLabel)
         contentView.addSubview(avoidIamgeView)
@@ -107,16 +108,7 @@ class CalendarInfoCell: UITableViewCell {
         contentView.addSubview(daindainImageView1)
         contentView.addSubview(avoidLabel)
         contentView.addSubview(lunarLabel)
-        
-        var i = 0
-        for family: String in UIFont.familyNames {
-            print("\(i)---项目字体---\(family)")
-            for names: String in UIFont.fontNames(forFamilyName: family) {
-                print("--- font \(names)")
-            }
-            i += 1
-        }
-        
+
         daindainImageView.snp.makeConstraints { (make) in
             make.left.equalTo(self.safeAreaLayoutGuide.snp.left).offset(10)
             make.top.equalTo(suitImageView.snp.bottom).offset(10)

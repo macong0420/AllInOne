@@ -9,7 +9,13 @@
 import UIKit
 
 let APPKEY = "28da3fa01d240"
+let EXPressAPPKEy = "e7285c2b-f97a-4b8c-9635-847ad3987854"
+let ExpressUserId = "1434396"
+
+///日历 宜忌
 let kCalendarAPI = "http://apicloud.mob.com/appstore/calendar/day"
+/// 历史上的今天
+let kHistoryTodayAPI = "http://apicloud.mob.com/appstore/history/query"
 
 let ScreenW : CGFloat = UIScreen.main.bounds.size.width
 let ScreenH : CGFloat = UIScreen.main.bounds.size.height

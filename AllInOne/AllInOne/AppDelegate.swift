@@ -19,11 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.backgroundColor = UIColor.white
         self.window?.makeKeyAndVisible()
         //1.创建导航控制器的根视图
-        let vc = ViewController()
+        let vc = HomeNavController()
         //2.创建导航视图控制器，并为他制定根视图控制器
-        let navigation = UINavigationController(rootViewController: vc)
+//        let navigation = UINavigationController(rootViewController: vc)
         //3.将导航视图控制器设置为window的根视图控制器
-        self.window?.rootViewController = navigation
+        self.window?.rootViewController = vc
         return true 
     }
     

@@ -53,6 +53,7 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     }()
     
     var model: CalendarModel?
+    var historyModel: CalendarHistoryContentModel? //历史上的今天
     
     //--------------------系统方法重写----------------------
     override func loadView() {
@@ -93,6 +94,7 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
         subViewsLayut()
         requetst(date: Date())
+        requeatHistoryToday(date: Date())
     }
 }
 
@@ -111,9 +113,10 @@ extension CalendarController {
 //网络请求
 extension CalendarController {
     
+    /// 宜 忌
     private func requetst(date: Date) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         let stringTime = dateFormatter.string(from: date)
         
         let params = ["key":APPKEY,"date":stringTime]
@@ -131,6 +134,26 @@ extension CalendarController {
             }
         }
     }
+    
+    private func requeatHistoryToday(date : Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMdd"
+        let stringTime = dateFormatter.string(from: date)
+        
+        let params = ["key":APPKEY,"day":stringTime]
+        Alamofire.request(kHistoryTodayAPI, method: .get, parameters: params).responseJSON { (response) in
+            switch response.result {
+            case .success:
+                let json = JSON(response.result.value!)
+                let model = CalendarHistoryContentModel(jsonData: json)
+                self.historyModel = model
+                self.tableView.reloadData()
+                
+            case .failure:
+                print("失败")
+            }
+        }
+    }
 }
 
 //MARK:- calenda代理
@@ -141,6 +164,7 @@ extension CalendarController: FSCalendarDataSource, FSCalendarDelegate {
             calendar.setCurrentPage(date, animated: true)
         }
         requetst(date: date)
+        requeatHistoryToday(date: date)
     }
     
     func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
@@ -193,15 +217,13 @@ extension CalendarController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        
         if indexPath.row == 0 {
             let cell: CalendarInfoCell = tableView.dequeueReusableCell(withIdentifier: kCalendarInfoCellID)! as! CalendarInfoCell
             cell.model = self.model
             return cell
         } else {
             let cell: CalendarTodayHistoryCell = tableView.dequeueReusableCell(withIdentifier: kCalendarHistoryCellID)! as! CalendarTodayHistoryCell
-//            cell.model = self.model
+            cell.historyModel = self.historyModel?.historyModelArr[0]
             return cell
         }
     }

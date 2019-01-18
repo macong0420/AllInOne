@@ -9,7 +9,18 @@
 /* Begin PBXBuildFile section */
 		78087B7A43E3DC1038249D7F /* Pods_AllInOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593BA87FCE571F03E271DEFB /* Pods_AllInOne.framework */; };
 		E213655A21CA29A600B57669 /* H-GungSeo2.2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E213655921CA299100B57669 /* H-GungSeo2.2.ttf */; };
-		E24F143621A65913000B4C6F /* LunarFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24F143521A65913000B4C6F /* LunarFormatter.swift */; };
+		E215D78521F07BF30008D9F1 /* HomeNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215D78421F07BF30008D9F1 /* HomeNavController.swift */; };
+		E215D78821F0833F0008D9F1 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215D78721F0833F0008D9F1 /* HomeTopView.swift */; };
+		E215D78A21F086E10008D9F1 /* ExtenSion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215D78921F086E10008D9F1 /* ExtenSion.swift */; };
+		E230891021F172B60098810B /* HomeCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230890F21F172B60098810B /* HomeCollectionCell.swift */; };
+		E230892321F1AAF80098810B /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230891821F1AAF70098810B /* CalendarController.swift */; };
+		E230892421F1AAF80098810B /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230891A21F1AAF70098810B /* CalendarModel.swift */; };
+		E230892521F1AAF80098810B /* CalendarHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230891B21F1AAF70098810B /* CalendarHistoryModel.swift */; };
+		E230892621F1AAF80098810B /* CalendarInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230891D21F1AAF70098810B /* CalendarInfoCell.swift */; };
+		E230892721F1AAF80098810B /* CalendarTodayHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230891E21F1AAF70098810B /* CalendarTodayHistoryCell.swift */; };
+		E230892821F1AAF80098810B /* LunarFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230891F21F1AAF70098810B /* LunarFormatter.swift */; };
+		E230892A21F1B2F60098810B /* EXPressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230892921F1B2F60098810B /* EXPressController.swift */; };
+		E230892C21F1BBF80098810B /* ExpressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230892B21F1BBF80098810B /* ExpressCell.swift */; };
 		E256259A21A4F672004A213C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E256259921A4F672004A213C /* AppDelegate.swift */; };
 		E256259C21A4F672004A213C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E256259B21A4F672004A213C /* ViewController.swift */; };
 		E256259F21A4F673004A213C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E256259D21A4F673004A213C /* Main.storyboard */; };
@@ -20,12 +31,8 @@
 		E25625CF21A503E4004A213C /* CommonDefin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25625CE21A503E4004A213C /* CommonDefin.swift */; };
 		E25625D121A50872004A213C /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25625D021A50872004A213C /* SnapKit.framework */; };
 		E25625D321A5094B004A213C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25625D221A5094B004A213C /* Foundation.framework */; };
-		E25625D521A50F35004A213C /* CalendarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25625D421A50F35004A213C /* CalendarController.swift */; };
 		E2602CB121A7990E008A3A06 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2602CB021A7990E008A3A06 /* Alamofire.framework */; };
-		E2602CB621A7A0AE008A3A06 /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2602CB521A7A0AE008A3A06 /* CalendarModel.swift */; };
 		E2602CB821A7A3F8008A3A06 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2602CB721A7A3F8008A3A06 /* CommonModel.swift */; };
-		E2602CC221A80270008A3A06 /* CalendarInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2602CC121A80270008A3A06 /* CalendarInfoCell.swift */; };
-		E2602CC421A80B1A008A3A06 /* CalendarTodayHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2602CC321A80B1A008A3A06 /* CalendarTodayHistoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +56,18 @@
 		0BD4C38962B936597C7CFA14 /* Pods-AllInOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllInOne.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne.release.xcconfig"; sourceTree = "<group>"; };
 		593BA87FCE571F03E271DEFB /* Pods_AllInOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllInOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E213655921CA299100B57669 /* H-GungSeo2.2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "H-GungSeo2.2.ttf"; sourceTree = "<group>"; };
-		E24F143521A65913000B4C6F /* LunarFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LunarFormatter.swift; path = AllInOne/Calernder/LunarFormatter.swift; sourceTree = SOURCE_ROOT; };
+		E215D78421F07BF30008D9F1 /* HomeNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavController.swift; sourceTree = "<group>"; };
+		E215D78721F0833F0008D9F1 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
+		E215D78921F086E10008D9F1 /* ExtenSion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtenSion.swift; sourceTree = "<group>"; };
+		E230890F21F172B60098810B /* HomeCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionCell.swift; sourceTree = "<group>"; };
+		E230891821F1AAF70098810B /* CalendarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
+		E230891A21F1AAF70098810B /* CalendarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
+		E230891B21F1AAF70098810B /* CalendarHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarHistoryModel.swift; sourceTree = "<group>"; };
+		E230891D21F1AAF70098810B /* CalendarInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarInfoCell.swift; sourceTree = "<group>"; };
+		E230891E21F1AAF70098810B /* CalendarTodayHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTodayHistoryCell.swift; sourceTree = "<group>"; };
+		E230891F21F1AAF70098810B /* LunarFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunarFormatter.swift; sourceTree = "<group>"; };
+		E230892921F1B2F60098810B /* EXPressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXPressController.swift; sourceTree = "<group>"; };
+		E230892B21F1BBF80098810B /* ExpressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressCell.swift; sourceTree = "<group>"; };
 		E256259621A4F672004A213C /* AllInOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllInOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E256259921A4F672004A213C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E256259B21A4F672004A213C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,12 +84,8 @@
 		E25625CE21A503E4004A213C /* CommonDefin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDefin.swift; sourceTree = "<group>"; };
 		E25625D021A50872004A213C /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25625D221A5094B004A213C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		E25625D421A50F35004A213C /* CalendarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarController.swift; sourceTree = "<group>"; };
 		E2602CB021A7990E008A3A06 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2602CB521A7A0AE008A3A06 /* CalendarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
 		E2602CB721A7A3F8008A3A06 /* CommonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
-		E2602CC121A80270008A3A06 /* CalendarInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarInfoCell.swift; sourceTree = "<group>"; };
-		E2602CC321A80B1A008A3A06 /* CalendarTodayHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTodayHistoryCell.swift; sourceTree = "<group>"; };
 		E2C6F6B721A551C200BFCDA4 /* Objc-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objc-Bridge-Header.h"; sourceTree = "<group>"; };
 		FFF19CD84A001EEE63D337EE /* Pods-AllInOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllInOne.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +139,111 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		E215D78621F083260008D9F1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E215D78421F07BF30008D9F1 /* HomeNavController.swift */,
+				E215D78721F0833F0008D9F1 /* HomeTopView.swift */,
+				E230890F21F172B60098810B /* HomeCollectionCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E230891221F1AA1D0098810B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E230891321F1AAF70098810B /* BeautfulImag(精美图片) */,
+				E230891621F1AAF70098810B /* Calernder(万年历) */,
+				E230892221F1AAF80098810B /* Express(快递查询) */,
+				E230891521F1AAF70098810B /* PhoneArea(手机归属地) */,
+				E230892021F1AAF80098810B /* QRCode(二维码) */,
+				E230892121F1AAF80098810B /* Wheather(天气预报) */,
+				E230891421F1AAF70098810B /* WIFI(密码查看器) */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E230891321F1AAF70098810B /* BeautfulImag(精美图片) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "BeautfulImag(精美图片)";
+			sourceTree = "<group>";
+		};
+		E230891421F1AAF70098810B /* WIFI(密码查看器) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "WIFI(密码查看器)";
+			sourceTree = "<group>";
+		};
+		E230891521F1AAF70098810B /* PhoneArea(手机归属地) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "PhoneArea(手机归属地)";
+			sourceTree = "<group>";
+		};
+		E230891621F1AAF70098810B /* Calernder(万年历) */ = {
+			isa = PBXGroup;
+			children = (
+				E230891721F1AAF70098810B /* Controller */,
+				E230891921F1AAF70098810B /* Model */,
+				E230891C21F1AAF70098810B /* View */,
+				E230891F21F1AAF70098810B /* LunarFormatter.swift */,
+			);
+			path = "Calernder(万年历)";
+			sourceTree = "<group>";
+		};
+		E230891721F1AAF70098810B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E230891821F1AAF70098810B /* CalendarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E230891921F1AAF70098810B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E230891A21F1AAF70098810B /* CalendarModel.swift */,
+				E230891B21F1AAF70098810B /* CalendarHistoryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E230891C21F1AAF70098810B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E230891D21F1AAF70098810B /* CalendarInfoCell.swift */,
+				E230891E21F1AAF70098810B /* CalendarTodayHistoryCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E230892021F1AAF80098810B /* QRCode(二维码) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "QRCode(二维码)";
+			sourceTree = "<group>";
+		};
+		E230892121F1AAF80098810B /* Wheather(天气预报) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Wheather(天气预报)";
+			sourceTree = "<group>";
+		};
+		E230892221F1AAF80098810B /* Express(快递查询) */ = {
+			isa = PBXGroup;
+			children = (
+				E230892921F1B2F60098810B /* EXPressController.swift */,
+				E230892B21F1BBF80098810B /* ExpressCell.swift */,
+			);
+			path = "Express(快递查询)";
+			sourceTree = "<group>";
+		};
 		E256258D21A4F672004A213C = {
 			isa = PBXGroup;
 			children = (
@@ -151,8 +270,9 @@
 			isa = PBXGroup;
 			children = (
 				E256259921A4F672004A213C /* AppDelegate.swift */,
+				E215D78621F083260008D9F1 /* Home */,
+				E230891221F1AA1D0098810B /* Controllers */,
 				E25625CB21A502CB004A213C /* Main */,
-				E25625C721A502CB004A213C /* Calernder */,
 				E25625CC21A502CB004A213C /* CommonDefine */,
 				E25625CD21A502CB004A213C /* Tools */,
 				E256259D21A4F673004A213C /* Main.storyboard */,
@@ -182,34 +302,6 @@
 			path = AllInOneUITests;
 			sourceTree = "<group>";
 		};
-		E25625C721A502CB004A213C /* Calernder */ = {
-			isa = PBXGroup;
-			children = (
-				E2602CB421A7A09F008A3A06 /* Model */,
-				E25625C821A502CB004A213C /* Controller */,
-				E25625CA21A502CB004A213C /* View */,
-			);
-			path = Calernder;
-			sourceTree = "<group>";
-		};
-		E25625C821A502CB004A213C /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				E25625D421A50F35004A213C /* CalendarController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		E25625CA21A502CB004A213C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E24F143521A65913000B4C6F /* LunarFormatter.swift */,
-				E2602CC121A80270008A3A06 /* CalendarInfoCell.swift */,
-				E2602CC321A80B1A008A3A06 /* CalendarTodayHistoryCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		E25625CB21A502CB004A213C /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,16 +323,9 @@
 			isa = PBXGroup;
 			children = (
 				E213655921CA299100B57669 /* H-GungSeo2.2.ttf */,
+				E215D78921F086E10008D9F1 /* ExtenSion.swift */,
 			);
 			path = Tools;
-			sourceTree = "<group>";
-		};
-		E2602CB421A7A09F008A3A06 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				E2602CB521A7A0AE008A3A06 /* CalendarModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,11 +519,14 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne-resources.sh",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -452,15 +540,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2602CC421A80B1A008A3A06 /* CalendarTodayHistoryCell.swift in Sources */,
+				E215D78A21F086E10008D9F1 /* ExtenSion.swift in Sources */,
 				E256259C21A4F672004A213C /* ViewController.swift in Sources */,
-				E2602CB621A7A0AE008A3A06 /* CalendarModel.swift in Sources */,
-				E25625D521A50F35004A213C /* CalendarController.swift in Sources */,
+				E230892521F1AAF80098810B /* CalendarHistoryModel.swift in Sources */,
+				E215D78821F0833F0008D9F1 /* HomeTopView.swift in Sources */,
+				E230891021F172B60098810B /* HomeCollectionCell.swift in Sources */,
+				E230892A21F1B2F60098810B /* EXPressController.swift in Sources */,
+				E230892C21F1BBF80098810B /* ExpressCell.swift in Sources */,
+				E230892321F1AAF80098810B /* CalendarController.swift in Sources */,
+				E230892421F1AAF80098810B /* CalendarModel.swift in Sources */,
+				E230892721F1AAF80098810B /* CalendarTodayHistoryCell.swift in Sources */,
 				E2602CB821A7A3F8008A3A06 /* CommonModel.swift in Sources */,
-				E24F143621A65913000B4C6F /* LunarFormatter.swift in Sources */,
+				E215D78521F07BF30008D9F1 /* HomeNavController.swift in Sources */,
 				E25625CF21A503E4004A213C /* CommonDefin.swift in Sources */,
 				E256259A21A4F672004A213C /* AppDelegate.swift in Sources */,
-				E2602CC221A80270008A3A06 /* CalendarInfoCell.swift in Sources */,
+				E230892821F1AAF80098810B /* LunarFormatter.swift in Sources */,
+				E230892621F1AAF80098810B /* CalendarInfoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,8 +731,9 @@
 			baseConfigurationReference = FFF19CD84A001EEE63D337EE /* Pods-AllInOne.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7E26DUM925;
 				INFOPLIST_FILE = AllInOne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -659,8 +755,9 @@
 			baseConfigurationReference = 0BD4C38962B936597C7CFA14 /* Pods-AllInOne.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7E26DUM925;
 				INFOPLIST_FILE = AllInOne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
