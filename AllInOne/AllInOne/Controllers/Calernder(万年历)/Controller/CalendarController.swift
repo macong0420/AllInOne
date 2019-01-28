@@ -42,8 +42,18 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         }
     }
     
+    //关闭按钮
+    lazy var closeBtn: UIButton = {
+        let btn = UIButton(type: UIButton.ButtonType.custom)
+        btn.setImage(UIImage(named: "Close"), for: UIControl.State.normal)
+        btn.titleLabel?.textColor = UIColor.black
+        btn.frame = CGRect(x: 20, y: 20, width: 40, height: 40)
+        btn.addTarget(self, action: #selector(closeAction), for: UIControl.Event.touchUpInside)
+        return btn
+    }()
+    
     lazy var tableView: UITableView = {
-        let tabV = UITableView(frame: CGRect(x: 0, y: 400, width: ScreenW, height: ScreenH-300), style: .plain)
+        let tabV = UITableView(frame: CGRect(x: 0, y: 480, width: ScreenW, height: ScreenH-380), style: .plain)
         tabV.backgroundColor = UIColor.groupTableViewBackground
         tabV.register(CalendarInfoCell.self, forCellReuseIdentifier: kCalendarInfoCellID)
         tabV.register(CalendarTodayHistoryCell.self, forCellReuseIdentifier: kCalendarHistoryCellID)
@@ -61,14 +71,14 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         view.backgroundColor = UIColor.groupTableViewBackground
         self.view = view
         let height: CGFloat = UIDevice.current.model.hasPrefix("iPad") ? 400 : 300
-        let calendar = FSCalendar(frame: CGRect(x: 0, y: self.navigationController!.navigationBar.frame.maxY, width: self.view.bounds.width, height: height))
+        let calendar = FSCalendar(frame: CGRect(x: 0, y: 80, width: self.view.bounds.width, height: height))
         calendar.dataSource = self
         calendar.delegate = self
         calendar.backgroundColor = UIColor.white
         self.view.addSubview(calendar)
         self.calendar = calendar
         calendar.snp.makeConstraints { (make) in
-            make.top.equalTo((self.navigationController?.navigationBar.frame.maxY)!)
+            make.top.equalTo(80)
             make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left)
             make.right.equalTo(0)
             make.height.equalTo(400)
@@ -89,12 +99,20 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "万年历"
+        self.view.addSubview(closeBtn)
         self.view.addSubview(tableView)
         self.view.addGestureRecognizer(self.scopeGesture)
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
         subViewsLayut()
         requetst(date: Date())
         requeatHistoryToday(date: Date())
+    }
+    
+    //关闭
+    @objc func closeAction() {
+        self.dismiss(animated: true, completion: {
+            
+        })
     }
 }
 
@@ -178,7 +196,7 @@ extension CalendarController: FSCalendarDataSource, FSCalendarDelegate {
 
         calendar.frame.size.height = bounds.height
         self.tableView.frame.origin.y = calendar.frame.maxY + 10
-        self.tableView.frame.size.height = ScreenH - bounds.height - self.navigationController!.navigationBar.frame.height
+        self.tableView.frame.size.height = ScreenH - bounds.height - 20
         self.view.layoutIfNeeded()
     }
 

@@ -61,14 +61,19 @@ extension HomeNavController : UICollectionViewDelegate,UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = indexPath.row
         
-        if item == 1 {
+        if item == 0 {
+            let calenderVC = CalendarController()
+            self.present(calenderVC, animated: true) {
+                
+            }
+        } else if item == 1 {
             let qrCodeVC = QRCodeController()
             self.present(qrCodeVC, animated: true) {
                 
             }
-        }
-        
-        if item == 4 {
+        } else if item == 2 {
+            
+        } else if item == 4 {
             let expressVC = EXPressController()
             self.present(expressVC, animated: true, completion: {
             })
