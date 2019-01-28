@@ -33,6 +33,11 @@
 		E25625D321A5094B004A213C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25625D221A5094B004A213C /* Foundation.framework */; };
 		E2602CB121A7990E008A3A06 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2602CB021A7990E008A3A06 /* Alamofire.framework */; };
 		E2602CB821A7A3F8008A3A06 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2602CB721A7A3F8008A3A06 /* CommonModel.swift */; };
+		E260A58E21FAFAA000DFD1BB /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260A58D21FAFAA000DFD1BB /* NetWorkTools.swift */; };
+		E260A59021FAFAEC00DFD1BB /* ExpressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260A58F21FAFAEC00DFD1BB /* ExpressModel.swift */; };
+		E260A59221FB1A4E00DFD1BB /* QRCodeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260A59121FB1A4E00DFD1BB /* QRCodeUtil.swift */; };
+		E260A59421FB1AAD00DFD1BB /* QRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260A59321FB1AAD00DFD1BB /* QRCodeController.swift */; };
+		E29D1D5421FEFBC400316F36 /* ScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D1D5321FEFBC400316F36 /* ScanController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +91,11 @@
 		E25625D221A5094B004A213C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E2602CB021A7990E008A3A06 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2602CB721A7A3F8008A3A06 /* CommonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
+		E260A58D21FAFAA000DFD1BB /* NetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
+		E260A58F21FAFAEC00DFD1BB /* ExpressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressModel.swift; sourceTree = "<group>"; };
+		E260A59121FB1A4E00DFD1BB /* QRCodeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeUtil.swift; sourceTree = "<group>"; };
+		E260A59321FB1AAD00DFD1BB /* QRCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeController.swift; sourceTree = "<group>"; };
+		E29D1D5321FEFBC400316F36 /* ScanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanController.swift; sourceTree = "<group>"; };
 		E2C6F6B721A551C200BFCDA4 /* Objc-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objc-Bridge-Header.h"; sourceTree = "<group>"; };
 		FFF19CD84A001EEE63D337EE /* Pods-AllInOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllInOne.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +234,8 @@
 		E230892021F1AAF80098810B /* QRCode(二维码) */ = {
 			isa = PBXGroup;
 			children = (
+				E260A59121FB1A4E00DFD1BB /* QRCodeUtil.swift */,
+				E260A59321FB1AAD00DFD1BB /* QRCodeController.swift */,
 			);
 			path = "QRCode(二维码)";
 			sourceTree = "<group>";
@@ -239,7 +251,9 @@
 			isa = PBXGroup;
 			children = (
 				E230892921F1B2F60098810B /* EXPressController.swift */,
+				E29D1D5321FEFBC400316F36 /* ScanController.swift */,
 				E230892B21F1BBF80098810B /* ExpressCell.swift */,
+				E260A58F21FAFAEC00DFD1BB /* ExpressModel.swift */,
 			);
 			path = "Express(快递查询)";
 			sourceTree = "<group>";
@@ -324,6 +338,7 @@
 			children = (
 				E213655921CA299100B57669 /* H-GungSeo2.2.ttf */,
 				E215D78921F086E10008D9F1 /* ExtenSion.swift */,
+				E260A58D21FAFAA000DFD1BB /* NetWorkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -492,8 +507,10 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/HRQRCodeScanTool/HRQRCodeScanTool.framework",
 				"${BUILT_PRODUCTS_DIR}/Hue/Hue.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SteviaLayout/Stevia.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -502,8 +519,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HRQRCodeScanTool.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hue.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stevia.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -540,9 +559,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E260A59221FB1A4E00DFD1BB /* QRCodeUtil.swift in Sources */,
+				E29D1D5421FEFBC400316F36 /* ScanController.swift in Sources */,
+				E260A59021FAFAEC00DFD1BB /* ExpressModel.swift in Sources */,
 				E215D78A21F086E10008D9F1 /* ExtenSion.swift in Sources */,
 				E256259C21A4F672004A213C /* ViewController.swift in Sources */,
 				E230892521F1AAF80098810B /* CalendarHistoryModel.swift in Sources */,
+				E260A58E21FAFAA000DFD1BB /* NetWorkTools.swift in Sources */,
 				E215D78821F0833F0008D9F1 /* HomeTopView.swift in Sources */,
 				E230891021F172B60098810B /* HomeCollectionCell.swift in Sources */,
 				E230892A21F1B2F60098810B /* EXPressController.swift in Sources */,
@@ -556,6 +579,7 @@
 				E256259A21A4F672004A213C /* AppDelegate.swift in Sources */,
 				E230892821F1AAF80098810B /* LunarFormatter.swift in Sources */,
 				E230892621F1AAF80098810B /* CalendarInfoCell.swift in Sources */,
+				E260A59421FB1AAD00DFD1BB /* QRCodeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -734,6 +758,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7E26DUM925;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = AllInOne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -758,6 +783,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7E26DUM925;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = AllInOne/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = (

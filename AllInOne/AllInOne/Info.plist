@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSCameraUsageDescription</key>
+	<string>允许此APP使用相机,扫描快递单号?</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>H-GungSeo2.2.ttf</string>

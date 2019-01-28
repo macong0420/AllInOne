@@ -1,0 +1,6 @@
+framework module HRQRCodeScanTool {
+  umbrella header "HRQRCodeScanTool-umbrella.h"
+
+  export *
+  module * { export * }
+}

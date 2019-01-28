@@ -60,12 +60,17 @@ extension HomeNavController : UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item = indexPath.row
-        print("===cell======\(item)");
+        
+        if item == 1 {
+            let qrCodeVC = QRCodeController()
+            self.present(qrCodeVC, animated: true) {
+                
+            }
+        }
         
         if item == 4 {
             let expressVC = EXPressController()
             self.present(expressVC, animated: true, completion: {
-                print("=======124")
             })
         }
     }
