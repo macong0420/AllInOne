@@ -91,7 +91,7 @@ extension HomeNavController {
         //修改导航栏按钮颜色
         self.navigationController?.navigationBar.tintColor = UIColor.clear
         //设置视图的背景图片（自动拉伸）
-        self.view.layer.contents = UIImage(named:"back")!.cgImage
+//        self.view.layer.contents = UIImage(named:"back")!.cgImage
         
         topView = HomeTopView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 340/2))
         self.view.addSubview(topView!)

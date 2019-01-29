@@ -16,9 +16,7 @@ class HomeTopView: UIView {
     }
     
     private func setupUI() {
-        
-        self.backgroundColor = UIColor(hex: "#33384C")
-        
+        self.addGradientLayer(frame: self.bounds, colors: [UIColor(hex: "4D6AD5").cgColor, UIColor(hex: "9660A0").cgColor])
         let titleLable = UILabel()
         titleLable.font = UIFont.boldSystemFont(ofSize: 28)
         titleLable.frame = CGRect(x: 0, y: (340/2 - 28)/2 + 20, width: self.frame.size.width-20, height: 28)
