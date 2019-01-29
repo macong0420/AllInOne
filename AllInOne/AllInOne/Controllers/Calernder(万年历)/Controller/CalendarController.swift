@@ -11,8 +11,7 @@ import EventKit
 import Alamofire
 import SwiftyJSON
 
-let kCalendarInfoCellID = "kCalendarInfoCellID"
-let kCalendarHistoryCellID = "kCalendarHistoryCellID"
+let kCalenderTaskCellID = "kCalenderTaskCellID"
 
 class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     //属性
@@ -42,12 +41,29 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         }
     }
     
+    //日程数据
+    var taskArray: Array = [Any]() {
+        didSet {
+            
+        }
+    }
+    
+    //添加日程按钮
+    lazy var addTaskBtn: UIButton = {
+        let img = UIImage(named: "AddTask")!
+        let btn = UIButton(type: UIButton.ButtonType.custom)
+        btn.frame = CGRect(x: (ScreenW-img.size.width)/2, y: ScreenH-img.size.height-20, width: img.size.width, height: img.size.height)
+        btn.setBackgroundImage(img, for: UIControl.State.normal)
+        return btn
+    }()
+    
     //关闭按钮
     lazy var closeBtn: UIButton = {
         let btn = UIButton(type: UIButton.ButtonType.custom)
-        btn.setImage(UIImage(named: "Close"), for: UIControl.State.normal)
+        let img = UIImage(named: "Close")!
+        btn.setBackgroundImage(img, for: .normal)
         btn.titleLabel?.textColor = UIColor.black
-        btn.frame = CGRect(x: 20, y: 20, width: 40, height: 40)
+        btn.frame = CGRect(x: 20, y: 40, width: img.size.width, height: img.size.height)
         btn.addTarget(self, action: #selector(closeAction), for: UIControl.Event.touchUpInside)
         return btn
     }()
@@ -55,8 +71,8 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     lazy var tableView: UITableView = {
         let tabV = UITableView(frame: CGRect(x: 0, y: 480, width: ScreenW, height: ScreenH-380), style: .plain)
         tabV.backgroundColor = UIColor.groupTableViewBackground
-        tabV.register(CalendarInfoCell.self, forCellReuseIdentifier: kCalendarInfoCellID)
-        tabV.register(CalendarTodayHistoryCell.self, forCellReuseIdentifier: kCalendarHistoryCellID)
+        tabV.register(CalenderTaskCell.self, forCellReuseIdentifier: kCalenderTaskCellID)
+        tabV.separatorColor = .clear
         tabV.delegate = self
         tabV.dataSource = self
         return tabV
@@ -68,13 +84,13 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     //--------------------系统方法重写----------------------
     override func loadView() {
         let view = UIView(frame: UIScreen.main.bounds)
-        view.backgroundColor = UIColor.groupTableViewBackground
+        view.addGradientLayer(frame: view.bounds, colors: [UIColor(hex: "4D6AD5").cgColor, UIColor(hex: "9660A0").cgColor])
         self.view = view
         let height: CGFloat = UIDevice.current.model.hasPrefix("iPad") ? 400 : 300
-        let calendar = FSCalendar(frame: CGRect(x: 0, y: 80, width: self.view.bounds.width, height: height))
+        let calendar = FSCalendar(frame: CGRect(x: 20, y: 80, width: self.view.bounds.width-40, height: height))
         calendar.dataSource = self
         calendar.delegate = self
-        calendar.backgroundColor = UIColor.white
+        calendar.backgroundColor = UIColor.clear
         self.view.addSubview(calendar)
         self.calendar = calendar
         calendar.snp.makeConstraints { (make) in
@@ -101,6 +117,7 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         self.title = "万年历"
         self.view.addSubview(closeBtn)
         self.view.addSubview(tableView)
+        self.view.addSubview(addTaskBtn)
         self.view.addGestureRecognizer(self.scopeGesture)
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
         subViewsLayut()
@@ -223,27 +240,17 @@ extension CalendarController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return taskArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row == 0 {
-                return 300
-        } else {
-            return 200
-        }
+        return 60
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row == 0 {
-            let cell: CalendarInfoCell = tableView.dequeueReusableCell(withIdentifier: kCalendarInfoCellID)! as! CalendarInfoCell
-            cell.model = self.model
-            return cell
-        } else {
-            let cell: CalendarTodayHistoryCell = tableView.dequeueReusableCell(withIdentifier: kCalendarHistoryCellID)! as! CalendarTodayHistoryCell
-            cell.historyModel = self.historyModel?.historyModelArr[0]
-            return cell
-        }
+        let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
+
+        return cell
     }
     
 }

@@ -22,9 +22,10 @@ class EXPressController: UIViewController {
     //关闭按钮
     lazy var closeBtn: UIButton = {
         let btn = UIButton(type: UIButton.ButtonType.custom)
-        btn.setImage(UIImage(named: "Close"), for: UIControl.State.normal)
+        let img = UIImage(named: "Close")!
+        btn.setBackgroundImage(img, for: .normal)
         btn.titleLabel?.textColor = UIColor.black
-        btn.frame = CGRect(x: kLefeMagin, y: 80, width: 40, height: 40)
+        btn.frame = CGRect(x: 20, y: 40, width: img.size.width, height: img.size.height)
         btn.addTarget(self, action: #selector(closeAction), for: UIControl.Event.touchUpInside)
         return btn
     }()

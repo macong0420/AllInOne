@@ -10,6 +10,36 @@ import Foundation
 import UIKit
 import CommonCrypto
 
+//-------------------UIView----------------------------
+extension UIView {
+    
+    public func addGradientLayer(
+        start: CGPoint = CGPoint(x: 0, y: 0), //渐变起点
+        end: CGPoint = CGPoint(x: 1, y: 1), //渐变终点
+        frame: CGRect,
+        colors: [CGColor]
+        ) {
+        layoutIfNeeded()
+        removeGradientLayer()
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.startPoint = start
+        gradientLayer.endPoint = end
+        gradientLayer.frame = frame
+        gradientLayer.colors = colors
+        layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
+    public func removeGradientLayer() {
+        guard let layers = self.layer.sublayers else { return }
+        for layer in layers {
+            if layer.isKind(of: CAGradientLayer.self) {
+                layer.removeFromSuperlayer()
+            }
+        }
+    }
+}
+
+//-------------------String----------------------------
 // 直接给String扩展方法
 extension String {
     func md5() -> String {
@@ -43,6 +73,7 @@ extension String {
     }
 }
 
+//-------------------UIColor----------------------------
 extension UIColor {
     static var random: UIColor {
         return UIColor(red: .random(in: 0...1),
@@ -59,6 +90,7 @@ extension UIColor {
     }
 }
 
+//-------------------UIImage----------------------------
 extension UIImage {
     
     class func imageWithColor(color: UIColor) -> UIImage {

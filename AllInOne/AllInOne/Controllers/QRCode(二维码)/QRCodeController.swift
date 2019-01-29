@@ -13,6 +13,17 @@ class QRCodeController: UIViewController {
     
     var inputStr = ""
     
+    //关闭按钮
+    lazy var closeBtn: UIButton = {
+        let btn = UIButton(type: UIButton.ButtonType.custom)
+        let img = UIImage(named: "Close")!
+        btn.setBackgroundImage(img, for: .normal)
+        btn.titleLabel?.textColor = UIColor.black
+        btn.frame = CGRect(x: 20, y: 40, width: img.size.width, height: img.size.height)
+        btn.addTarget(self, action: #selector(closeAction), for: UIControl.Event.touchUpInside)
+        return btn
+    }()
+    
     lazy var inputField: UITextField = {
         let input = UITextField(frame: CGRect(x: 40, y: 130, width: ScreenW-80, height: 40))
         input.layer.cornerRadius = 5
@@ -54,9 +65,11 @@ class QRCodeController: UIViewController {
     }
 
     func setupUI() {
+        self.view.backgroundColor = UIColor.white
         
         self.view.addSubview(createBtn)
         self.view.addSubview(inputField)
+        self.view.addSubview(closeBtn)
     }
     
     @objc func inputChanged(input textField: UITextField) {
@@ -75,6 +88,13 @@ class QRCodeController: UIViewController {
         } else {
             createBtn.isEnabled = false
         }
+    }
+    
+    //关闭
+    @objc func closeAction() {
+        self.dismiss(animated: true, completion: {
+            
+        })
     }
     
 
