@@ -54,6 +54,7 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         let btn = UIButton(type: UIButton.ButtonType.custom)
         btn.frame = CGRect(x: (ScreenW-img.size.width)/2, y: ScreenH-img.size.height-20, width: img.size.width, height: img.size.height)
         btn.setBackgroundImage(img, for: UIControl.State.normal)
+        btn.addTarget(self, action: #selector(addTaskBtnAction), for: UIControl.Event.touchUpInside)
         return btn
     }()
     
@@ -127,11 +128,14 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(self.scopeGesture)
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
         subViewsLayut()
-//        requetst(date: Date())
-//        requeatHistoryToday(date: Date())
         self.tableView.reloadData()
         self.view.addSubview(emptyView)
         self.view.bringSubviewToFront(emptyView)
+    }
+    
+    //添加task
+    @objc func addTaskBtnAction() {
+    
     }
     
     //关闭
@@ -258,11 +262,6 @@ extension CalendarController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
-
-//        if taskArray.count < 1 {
-//            self.view.addSubview(emptyView)
-//            self.view.bringSubviewToFront(emptyView)
-//        }
         return cell
     }
     
