@@ -70,12 +70,18 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     
     lazy var tableView: UITableView = {
         let tabV = UITableView(frame: CGRect(x: 0, y: 480, width: ScreenW, height: ScreenH-380), style: .plain)
-        tabV.backgroundColor = UIColor.groupTableViewBackground
+        tabV.backgroundColor = UIColor.white
         tabV.register(CalenderTaskCell.self, forCellReuseIdentifier: kCalenderTaskCellID)
         tabV.separatorColor = .clear
         tabV.delegate = self
         tabV.dataSource = self
         return tabV
+    }()
+    
+    lazy var emptyView: TaskEmptyView = {
+       
+        let view = TaskEmptyView(frame: CGRect(x: 0, y: 500, width: ScreenW, height: ScreenW/3 + 50))
+        return view
     }()
     
     var model: CalendarModel?
@@ -121,8 +127,11 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(self.scopeGesture)
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
         subViewsLayut()
-        requetst(date: Date())
-        requeatHistoryToday(date: Date())
+//        requetst(date: Date())
+//        requeatHistoryToday(date: Date())
+        self.tableView.reloadData()
+        self.view.addSubview(emptyView)
+        self.view.bringSubviewToFront(emptyView)
     }
     
     //关闭
@@ -250,6 +259,10 @@ extension CalendarController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
 
+//        if taskArray.count < 1 {
+//            self.view.addSubview(emptyView)
+//            self.view.bringSubviewToFront(emptyView)
+//        }
         return cell
     }
     
