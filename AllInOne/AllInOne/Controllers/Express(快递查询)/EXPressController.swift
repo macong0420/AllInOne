@@ -35,7 +35,7 @@ class EXPressController: UIViewController {
        let btn = UIButton(type: UIButton.ButtonType.custom)
         btn.setTitle("", for: UIControl.State.normal)
         btn.setImage(UIImage(named: "ScanCode"), for: UIControl.State.normal)
-        btn.frame = CGRect(x: ScreenW-kLefeMagin-kLefeMagin, y: 80, width: 40, height: 40)
+        btn.frame = CGRect(x: ScreenW-kLefeMagin-30, y: 80, width: 40, height: 40)
         btn.addTarget(self, action: #selector(scanAcrion), for: UIControl.Event.touchUpInside)
         return btn
     }()
@@ -115,7 +115,7 @@ extension EXPressController {
             make.top.equalTo(closeBtn.snp.bottom).offset(20)
             make.left.equalTo(closeBtn.snp.left)
             make.height.equalTo(40)
-            make.right.equalTo(-40)
+            make.right.equalTo(-70)
         }
         
         expressSelcteBtn.snp.makeConstraints { (make) in

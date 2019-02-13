@@ -48,6 +48,8 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         }
     }
     
+    var selectDate = Date()
+    
     //添加日程按钮
     lazy var addTaskBtn: UIButton = {
         let img = UIImage(named: "AddTask")!
@@ -136,6 +138,11 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     //添加task
     @objc func addTaskBtnAction() {
     
+        let addVC = AddTaskController(chooseDate: self.selectDate)
+        
+        self.present(addVC, animated: true) {
+            
+        }
     }
     
     //关闭
@@ -211,8 +218,9 @@ extension CalendarController: FSCalendarDataSource, FSCalendarDelegate {
         if monthPosition == .previous || monthPosition == .next {
             calendar.setCurrentPage(date, animated: true)
         }
-        requetst(date: date)
-        requeatHistoryToday(date: date)
+        selectDate = date
+//        requetst(date: date)
+//        requeatHistoryToday(date: date)
     }
     
     func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {

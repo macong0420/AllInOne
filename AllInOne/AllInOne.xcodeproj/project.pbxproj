@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		78087B7A43E3DC1038249D7F /* Pods_AllInOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 593BA87FCE571F03E271DEFB /* Pods_AllInOne.framework */; };
 		E213655A21CA29A600B57669 /* H-GungSeo2.2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E213655921CA299100B57669 /* H-GungSeo2.2.ttf */; };
+		E2144A8222013F0100EBFD78 /* AddTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2144A8122013F0100EBFD78 /* AddTaskController.swift */; };
+		E2144A842201803600EBFD78 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2144A832201803600EBFD78 /* AddTaskView.swift */; };
 		E215D78521F07BF30008D9F1 /* HomeNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215D78421F07BF30008D9F1 /* HomeNavController.swift */; };
 		E215D78821F0833F0008D9F1 /* HomeTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215D78721F0833F0008D9F1 /* HomeTopView.swift */; };
 		E215D78A21F086E10008D9F1 /* ExtenSion.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215D78921F086E10008D9F1 /* ExtenSion.swift */; };
@@ -63,6 +65,8 @@
 		0BD4C38962B936597C7CFA14 /* Pods-AllInOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllInOne.release.xcconfig"; path = "Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne.release.xcconfig"; sourceTree = "<group>"; };
 		593BA87FCE571F03E271DEFB /* Pods_AllInOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AllInOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E213655921CA299100B57669 /* H-GungSeo2.2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "H-GungSeo2.2.ttf"; sourceTree = "<group>"; };
+		E2144A8122013F0100EBFD78 /* AddTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskController.swift; sourceTree = "<group>"; };
+		E2144A832201803600EBFD78 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		E215D78421F07BF30008D9F1 /* HomeNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavController.swift; sourceTree = "<group>"; };
 		E215D78721F0833F0008D9F1 /* HomeTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTopView.swift; sourceTree = "<group>"; };
 		E215D78921F086E10008D9F1 /* ExtenSion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtenSion.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				E230891821F1AAF70098810B /* CalendarController.swift */,
+				E2144A8122013F0100EBFD78 /* AddTaskController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,6 +238,7 @@
 				E230891E21F1AAF70098810B /* CalendarTodayHistoryCell.swift */,
 				E21820B522004C230050B7D1 /* CalenderTaskCell.swift */,
 				E21820B722005BC90050B7D1 /* TaskEmptyView.swift */,
+				E2144A832201803600EBFD78 /* AddTaskView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -567,6 +573,7 @@
 			files = (
 				E21820B822005BC90050B7D1 /* TaskEmptyView.swift in Sources */,
 				E260A59221FB1A4E00DFD1BB /* QRCodeUtil.swift in Sources */,
+				E2144A8222013F0100EBFD78 /* AddTaskController.swift in Sources */,
 				E29D1D5421FEFBC400316F36 /* ScanController.swift in Sources */,
 				E260A59021FAFAEC00DFD1BB /* ExpressModel.swift in Sources */,
 				E215D78A21F086E10008D9F1 /* ExtenSion.swift in Sources */,
@@ -580,6 +587,7 @@
 				E230892321F1AAF80098810B /* CalendarController.swift in Sources */,
 				E230892421F1AAF80098810B /* CalendarModel.swift in Sources */,
 				E230892721F1AAF80098810B /* CalendarTodayHistoryCell.swift in Sources */,
+				E2144A842201803600EBFD78 /* AddTaskView.swift in Sources */,
 				E2602CB821A7A3F8008A3A06 /* CommonModel.swift in Sources */,
 				E215D78521F07BF30008D9F1 /* HomeNavController.swift in Sources */,
 				E25625CF21A503E4004A213C /* CommonDefin.swift in Sources */,
