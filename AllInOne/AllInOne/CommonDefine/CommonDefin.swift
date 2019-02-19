@@ -24,6 +24,8 @@ let ScreenH = UIScreen.main.bounds.size.height
 let kMagin : CGFloat = 20
 let kLefeMagin: CGFloat = 40.0
 
+let kTopNavViewH: CGFloat = 150
+
 var StatusBarH : CGFloat = isIPhoneXType() ? 44 : 20
 var NavgationH : CGFloat = isIPhoneXType() ? 88 : 64
 

@@ -44,6 +44,7 @@ class ScanController: UIViewController {
     //关闭
     @objc func closeAction() {
         DispatchQueue.main.async {
+            HRQRCodeScanTool.shared.stopScan()
             self.dismiss(animated: true) {
                 
             }
@@ -56,11 +57,11 @@ extension ScanController: HRQRCodeScanToolDelegate {
     
     //----------------扫描代理
     func scanQRCodeFaild(error: HRQRCodeTooError) {
+        HRQRCodeScanTool.shared.stopScan()
         print(error)
     }
     
     func scanQRCodeSuccess(resultStrs: [String]) {
-        print(resultStrs.first)
         self.delegate?.getScanInfo(info: resultStrs.first ?? "")
         HRQRCodeScanTool.shared.stopScan()
         

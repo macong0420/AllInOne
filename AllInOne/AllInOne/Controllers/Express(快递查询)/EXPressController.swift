@@ -30,12 +30,18 @@ class EXPressController: UIViewController {
         return btn
     }()
     
+    lazy var topNavView: CommonTopNavView = {
+        let rect = CGRect(x: 0, y: 0, width: ScreenW, height: kTopNavViewH)
+        let topView = CommonTopNavView(frame: rect, title: "快递查询")
+        return topView
+    }()
+    
     //扫码
     lazy var scanBtn: UIButton = {
        let btn = UIButton(type: UIButton.ButtonType.custom)
         btn.setTitle("", for: UIControl.State.normal)
         btn.setImage(UIImage(named: "ScanCode"), for: UIControl.State.normal)
-        btn.frame = CGRect(x: ScreenW-kLefeMagin-30, y: 80, width: 40, height: 40)
+        btn.frame = CGRect(x: ScreenW-kLefeMagin-30, y: 100, width: 40, height: 40)
         btn.addTarget(self, action: #selector(scanAcrion), for: UIControl.Event.touchUpInside)
         return btn
     }()
@@ -44,10 +50,10 @@ class EXPressController: UIViewController {
     lazy var expressCodeInputField: UITextField = {
         let textfield = UITextField()
         textfield.delegate = self
-        textfield.layer.cornerRadius = 5
-        textfield.layer.masksToBounds = true
-        textfield.layer.borderColor = UIColor.gray.cgColor
-        textfield.layer.borderWidth = 1
+        textfield.layer.shadowColor = UIColor.init(hex: "#ececec").cgColor
+        textfield.layer.shadowOpacity = 0.9
+        textfield.layer.shadowRadius = 10
+        textfield.backgroundColor = UIColor.white
         textfield.keyboardType = .numberPad
         textfield.placeholder = "请输入您的快递单号"
         textfield.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -60,11 +66,11 @@ class EXPressController: UIViewController {
     lazy var expressSelcteBtn: UIButton = {
         let btn  = UIButton(type: UIButton.ButtonType.custom)
         btn.setTitle("请选择快递公司", for: UIControl.State.normal)
+        btn.backgroundColor = UIColor.white
         btn.setTitleColor(UIColor.black, for: UIControl.State.normal)
-        btn.layer.masksToBounds = true
-        btn.layer.cornerRadius = 5
-        btn.layer.borderColor = UIColor.gray.cgColor
-        btn.layer.borderWidth = 1
+        btn.layer.shadowColor = UIColor.init(hex: "#ececec").cgColor
+        btn.layer.shadowOpacity = 0.9
+        btn.layer.shadowRadius = 10
         btn.addTarget(self, action: #selector(expressSelcteBtnAction), for: UIControl.Event.touchUpInside)
         return btn
     }()
@@ -104,6 +110,7 @@ extension EXPressController {
     private func setupUI() {
         self.view.backgroundColor = UIColor.white
         
+        self.view.addSubview(topNavView)
         self.view.addSubview(closeBtn)
         self.view.addSubview(scanBtn)
         self.view.addSubview(expressCodeInputField)
@@ -112,16 +119,16 @@ extension EXPressController {
         self.view.addSubview(expressTablvew)
         
         expressCodeInputField.snp.makeConstraints { (make) in
-            make.top.equalTo(closeBtn.snp.bottom).offset(20)
+            make.top.equalTo(topNavView.snp.bottom).offset(40)
             make.left.equalTo(closeBtn.snp.left)
-            make.height.equalTo(40)
-            make.right.equalTo(-70)
+            make.height.equalTo(60)
+            make.right.equalTo(-40)
         }
         
         expressSelcteBtn.snp.makeConstraints { (make) in
             make.top.equalTo(expressCodeInputField.snp.bottom).offset(20)
             make.left.equalTo(closeBtn.snp.left)
-            make.height.equalTo(40)
+            make.height.equalTo(60)
             make.right.equalTo(-40)
         }
         

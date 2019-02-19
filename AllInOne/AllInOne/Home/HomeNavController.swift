@@ -97,11 +97,12 @@ extension HomeNavController {
         self.view.addSubview(topView!)
         collectionView = createCollectionView()
         self.view.addSubview(collectionView!)
-    }
+    }                    
     
     private func initData() {
         itemTitleArray = ["万年历","二维码生成","精美图片","天气预报","快递查询","手机归属地","wifi密码查看"]
         itemIconArray = ["HomeCalernser","HomeQRCode","HomeBuatufulImg","HomeWeather","HomeKuaidi","HomePhone","wifi"]
+
     }
     
     
