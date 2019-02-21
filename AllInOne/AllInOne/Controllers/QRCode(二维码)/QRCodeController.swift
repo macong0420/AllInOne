@@ -24,12 +24,18 @@ class QRCodeController: UIViewController {
         return btn
     }()
     
+    lazy var topNavView: CommonTopNavView = {
+        let rect = CGRect(x: 0, y: 0, width: ScreenW, height: kTopNavViewH)
+        let topView = CommonTopNavView(frame: rect, title: "二维码生成")
+        return topView
+    }()
+    
     lazy var inputField: UITextField = {
-        let input = UITextField(frame: CGRect(x: 40, y: 130, width: ScreenW-80, height: 40))
-        input.layer.cornerRadius = 5
-        input.layer.masksToBounds = true
-        input.layer.borderColor = UIColor.gray.cgColor
-        input.layer.borderWidth = 1
+        let input = UITextField(frame: CGRect(x: 40, y: kTopNavViewH + 40, width: ScreenW-80, height: 40))
+        input.layer.shadowColor = UIColor.init(hex: "#ececec").cgColor
+        input.layer.shadowOpacity = 0.9
+        input.layer.shadowRadius = 10
+        input.backgroundColor = UIColor.white
         input.keyboardType = .numberPad
         input.placeholder = "请输入您要生成二维码的内容"
         input.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
@@ -42,21 +48,18 @@ class QRCodeController: UIViewController {
     lazy var createBtn: UIButton = {
         let btn = UIButton(type: UIButton.ButtonType.custom)
         btn.setTitle("生成", for: UIControl.State.normal)
-        btn.frame = CGRect(x: 40, y: 190, width: ScreenW-80, height: 40)
-        btn.layer.cornerRadius = 5
+        btn.frame = CGRect(x: 40, y: kTopNavViewH + 40 + 40 + 40, width: ScreenW-80, height: 40)
         btn.isEnabled = false
-        btn.layer.masksToBounds = true
+        btn.layer.shadowColor = UIColor.init(hex: "#ececec").cgColor
+        btn.layer.shadowOpacity = 0.9
+        btn.layer.shadowRadius = 10
         btn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.orange), for: UIControl.State.normal)
         btn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.groupTableViewBackground), for: UIControl.State.disabled)
-        btn.addTarget(self, action: #selector(createQRImag(input:)), for: UIControl.Event.touchUpInside)
+        btn.addTarget(self, action: #selector(createQRImag), for: UIControl.Event.touchUpInside)
         return btn
     }()
     
-//    lazy var qrImgView: UIImageView = {
-//        let imgView = UIImageView(frame: CGRect(x: 20, y: 250, width: ScreenW-80, height: ScreenW-80))
-//    }()
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +71,7 @@ class QRCodeController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         self.view.addSubview(createBtn)
+        self.view.addSubview(topNavView)
         self.view.addSubview(inputField)
         self.view.addSubview(closeBtn)
     }
@@ -77,10 +81,11 @@ class QRCodeController: UIViewController {
         checkBtnStatus()
     }
     
-    @objc func createQRImag(input: String) {
-//        QRCodeUtil.setQRCodeToImageView(<#T##imageView: UIImageView?##UIImageView?#>, input)
+    @objc func createQRImag() {
+        let qrcodeImgVc = QRCodeImageController.init(contenString: inputStr)
+//        self.navigationController?.pushViewController(qrcodeImgVc, animated: true)
+        self.present(qrcodeImgVc, animated: true, completion: nil)
     }
-    
     
     func checkBtnStatus() {
         if inputStr.count > 0 {

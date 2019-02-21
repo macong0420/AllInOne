@@ -38,7 +38,7 @@ class QRCodeUtil {
         var resultImage = UIImage(ciImage: image!)
         
         // 设置二维码中心显示的小图标
-        let center = UIImage(named: "AppIcon.png")
+        let center = UIImage(named: "AppIcon")
         resultImage = getClearImage(sourceImage: resultImage, center: center!)
         
         // 显示图片

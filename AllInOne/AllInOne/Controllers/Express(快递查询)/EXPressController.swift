@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SnapKit
 import HRQRCodeScanTool
+import CLToast
 
 class EXPressController: UIViewController {
 
@@ -200,15 +201,28 @@ extension EXPressController {
         let expressQuestStr = expressAPI + "?type=" + expressCodeStr! + "&postid=" + logisticCode + detailStr
         
         NetWorkTools.postRequest(urlString: expressQuestStr, parameters: [:] as [String : Any]) { (result) in
-            guard let resultDict = result as? [String : NSObject] else {return}
+            guard let resultDict = result as? [String : NSObject] else {
+                CLToast.cl_show(msg: "暂未查询到物流信息! \n\n请检测单号或快递公司后重试")
+                return
+                
+            }
             //根据data的Key 取出数组
-            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else {return}
+            guard let dataArray = resultDict["data"] as? [[String : NSObject]] else {
+                CLToast.cl_show(msg: "暂未查询到物流信息! \n\n请检测单号或快递公司后重试")
+                return
+            }
+            
             for dict in dataArray {
                 let data = try! JSONSerialization.data(withJSONObject: dict, options: [])
                 let expressModel = try! JSONDecoder().decode(ExpressModel.self, from: data)
                 self.expressModelArr.append(expressModel)
             }
-            self.expressTablvew.reloadData()
+            
+            if self.expressModelArr.count > 0 {
+                self.expressTablvew.reloadData()
+            } else {
+                CLToast.cl_show(msg: "暂未查询到物流信息! \n\n请检测单号或快递公司后重试")
+            }
         }
     }
 }

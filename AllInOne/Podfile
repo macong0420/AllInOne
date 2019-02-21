@@ -11,6 +11,6 @@ pod 'Hue'
 pod 'Alamofire'
 pod 'HRQRCodeScanTool'
 pod 'SteviaLayout'
-
+pod 'CLToast'
 
 end
