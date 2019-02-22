@@ -45,11 +45,9 @@ class QRCodeImageController: UIViewController {
         let btn = UIButton(type: UIButton.ButtonType.custom)
         btn.setTitle("保存到相册", for: UIControl.State.normal)
         btn.frame = CGRect(x: 40, y: kTopNavViewH + 40 + imgViewW + 20, width: ScreenW-80, height: 40)
-        btn.layer.shadowColor = UIColor.init(hex: "#ececec").cgColor
-        btn.layer.shadowOpacity = 0.9
-        btn.layer.shadowRadius = 10
-        btn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.orange), for: UIControl.State.normal)
-        btn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.groupTableViewBackground), for: UIControl.State.disabled)
+        btn.layer.cornerRadius = 5
+        btn.layer.masksToBounds = true
+        btn.setBackgroundImage(UIImage.imageWithColor(color: UIColor.init(hex: "#32384E")), for: UIControl.State.normal)
         btn.addTarget(self, action: #selector(saveQRImag), for: UIControl.Event.touchUpInside)
         return btn
     }()
