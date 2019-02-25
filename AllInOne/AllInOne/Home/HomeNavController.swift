@@ -62,6 +62,19 @@ extension HomeNavController : UICollectionViewDelegate,UICollectionViewDataSourc
         let item = indexPath.row
         
         if item == 0 {
+            let qrCodeVC = QRCodeController()
+            self.present(qrCodeVC, animated: true, completion: nil)
+            
+        } else if item == 1 {
+            let expressVC = EXPressController()
+            self.present(expressVC, animated: true,completion: nil)
+        } else if item == 2 {
+            let randomVC = RACRandomController()
+            self.present(randomVC, animated: true, completion: nil)
+        }
+        
+        /*
+        if item == 0 {
             let calenderVC = CalendarController()
             self.present(calenderVC, animated: true) {
                 
@@ -78,6 +91,7 @@ extension HomeNavController : UICollectionViewDelegate,UICollectionViewDataSourc
             self.present(expressVC, animated: true, completion: {
             })
         }
+         */
     }
 }
 
@@ -100,8 +114,10 @@ extension HomeNavController {
     }                    
     
     private func initData() {
-        itemTitleArray = ["万年历","二维码生成","精美图片","天气预报","快递查询","手机归属地","wifi密码查看"]
-        itemIconArray = ["HomeCalernser","HomeQRCode","HomeBuatufulImg","HomeWeather","HomeKuaidi","HomePhone","wifi"]
+//        itemTitleArray = ["万年历","二维码生成","精美图片","天气预报","快递查询","手机归属地","wifi密码查看"]
+//        itemIconArray = ["HomeCalernser","HomeQRCode","HomeBuatufulImg","HomeWeather","HomeKuaidi","HomePhone","wifi"]
+        itemTitleArray = ["二维码生成","快递查询","随机数生成"]
+        itemIconArray = ["HomeQRCode","HomeKuaidi","ARCRomCode"]
 
     }
     

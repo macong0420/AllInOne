@@ -35,6 +35,8 @@
 		E25625CF21A503E4004A213C /* CommonDefin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25625CE21A503E4004A213C /* CommonDefin.swift */; };
 		E25625D121A50872004A213C /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25625D021A50872004A213C /* SnapKit.framework */; };
 		E25625D321A5094B004A213C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E25625D221A5094B004A213C /* Foundation.framework */; };
+		E25FB942221FDF090044B060 /* RACRandomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FB941221FDF090044B060 /* RACRandomController.swift */; };
+		E25FB944221FE10F0044B060 /* RACRandomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E25FB943221FE10F0044B060 /* RACRandomView.swift */; };
 		E2602CB121A7990E008A3A06 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2602CB021A7990E008A3A06 /* Alamofire.framework */; };
 		E2602CB821A7A3F8008A3A06 /* CommonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2602CB721A7A3F8008A3A06 /* CommonModel.swift */; };
 		E260A58E21FAFAA000DFD1BB /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260A58D21FAFAA000DFD1BB /* NetWorkTools.swift */; };
@@ -99,6 +101,8 @@
 		E25625CE21A503E4004A213C /* CommonDefin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonDefin.swift; sourceTree = "<group>"; };
 		E25625D021A50872004A213C /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E25625D221A5094B004A213C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E25FB941221FDF090044B060 /* RACRandomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RACRandomController.swift; sourceTree = "<group>"; };
+		E25FB943221FE10F0044B060 /* RACRandomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RACRandomView.swift; sourceTree = "<group>"; };
 		E2602CB021A7990E008A3A06 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2602CB721A7A3F8008A3A06 /* CommonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonModel.swift; sourceTree = "<group>"; };
 		E260A58D21FAFAA000DFD1BB /* NetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
@@ -174,36 +178,12 @@
 		E230891221F1AA1D0098810B /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E230891321F1AAF70098810B /* BeautfulImag(精美图片) */,
-				E230891621F1AAF70098810B /* Calernder(万年历) */,
-				E230892221F1AAF80098810B /* Express(快递查询) */,
-				E230891521F1AAF70098810B /* PhoneArea(手机归属地) */,
+				E25FB940221FDEEF0044B060 /* ARCRandom(随机数生成) */,
 				E230892021F1AAF80098810B /* QRCode(二维码) */,
-				E230892121F1AAF80098810B /* Wheather(天气预报) */,
-				E230891421F1AAF70098810B /* WIFI(密码查看器) */,
+				E230892221F1AAF80098810B /* Express(快递查询) */,
+				E230891621F1AAF70098810B /* Calernder(万年历) */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		E230891321F1AAF70098810B /* BeautfulImag(精美图片) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "BeautfulImag(精美图片)";
-			sourceTree = "<group>";
-		};
-		E230891421F1AAF70098810B /* WIFI(密码查看器) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "WIFI(密码查看器)";
-			sourceTree = "<group>";
-		};
-		E230891521F1AAF70098810B /* PhoneArea(手机归属地) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "PhoneArea(手机归属地)";
 			sourceTree = "<group>";
 		};
 		E230891621F1AAF70098810B /* Calernder(万年历) */ = {
@@ -255,13 +235,6 @@
 				E2FB3047221D63C400BC2433 /* QRCodeImageController.swift */,
 			);
 			path = "QRCode(二维码)";
-			sourceTree = "<group>";
-		};
-		E230892121F1AAF80098810B /* Wheather(天气预报) */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Wheather(天气预报)";
 			sourceTree = "<group>";
 		};
 		E230892221F1AAF80098810B /* Express(快递查询) */ = {
@@ -359,6 +332,15 @@
 				E260A58D21FAFAA000DFD1BB /* NetWorkTools.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		E25FB940221FDEEF0044B060 /* ARCRandom(随机数生成) */ = {
+			isa = PBXGroup;
+			children = (
+				E25FB941221FDF090044B060 /* RACRandomController.swift */,
+				E25FB943221FE10F0044B060 /* RACRandomView.swift */,
+			);
+			path = "ARCRandom(随机数生成)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -590,6 +572,7 @@
 				E230892521F1AAF80098810B /* CalendarHistoryModel.swift in Sources */,
 				E260A58E21FAFAA000DFD1BB /* NetWorkTools.swift in Sources */,
 				E215D78821F0833F0008D9F1 /* HomeTopView.swift in Sources */,
+				E25FB944221FE10F0044B060 /* RACRandomView.swift in Sources */,
 				E230891021F172B60098810B /* HomeCollectionCell.swift in Sources */,
 				E230892A21F1B2F60098810B /* EXPressController.swift in Sources */,
 				E230892C21F1BBF80098810B /* ExpressCell.swift in Sources */,
@@ -602,6 +585,7 @@
 				E25625CF21A503E4004A213C /* CommonDefin.swift in Sources */,
 				E256259A21A4F672004A213C /* AppDelegate.swift in Sources */,
 				E230892821F1AAF80098810B /* LunarFormatter.swift in Sources */,
+				E25FB942221FDF090044B060 /* RACRandomController.swift in Sources */,
 				E230892621F1AAF80098810B /* CalendarInfoCell.swift in Sources */,
 				E21820B622004C230050B7D1 /* CalenderTaskCell.swift in Sources */,
 				E260A59421FB1AAD00DFD1BB /* QRCodeController.swift in Sources */,
