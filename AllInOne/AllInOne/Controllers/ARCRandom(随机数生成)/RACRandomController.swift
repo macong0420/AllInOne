@@ -9,25 +9,8 @@
 import UIKit
 import CLToast
 
-class RACRandomController: UIViewController {
+class RACRandomController: BaseViewController {
 
-    //关闭按钮
-    lazy var closeBtn: UIButton = {
-        let btn = UIButton(type: UIButton.ButtonType.custom)
-        let img = UIImage(named: "Close")!
-        btn.setBackgroundImage(img, for: .normal)
-        btn.titleLabel?.textColor = UIColor.black
-        btn.frame = CGRect(x: 20, y: 40, width: img.size.width, height: img.size.height)
-        btn.addTarget(self, action: #selector(closeAction), for: UIControl.Event.touchUpInside)
-        return btn
-    }()
-    
-    lazy var topNavView: CommonTopNavView = {
-        let rect = CGRect(x: 0, y: 0, width: ScreenW, height: kTopNavViewH)
-        let topView = CommonTopNavView(frame: rect, title: "随机数生成")
-        return topView
-    }()
-    
     private lazy var tipsLabel: UILabel = {
         let label = UILabel()
         label.text = "请输入随机数范围"
@@ -101,13 +84,11 @@ class RACRandomController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.white
+        topNavView.setTitle(title: "随机数生成")
         setupUI()
     }
     
     private func setupUI() {
-        view.addSubview(topNavView)
-        view.addSubview(closeBtn)
         view.addSubview(tipsLabel)
         view.addSubview(firstInput)
         view.addSubview(secondInput)
@@ -115,12 +96,6 @@ class RACRandomController: UIViewController {
         view.addSubview(RandomLabel)
     }
     
-    //关闭
-    @objc func closeAction() {
-        self.dismiss(animated: true, completion: {
-            
-        })
-    }
     
     @objc func firstInputChange(iputField: UITextField) {
         

@@ -12,30 +12,12 @@ import SnapKit
 import HRQRCodeScanTool
 import CLToast
 
-class EXPressController: UIViewController {
+class EXPressController: BaseViewController {
 
     var expressCodeStr : String?
     var expressValueStr = ""
     var logisticCode = "" //快递单号
     var expressModelArr = [ExpressModel]()
-
-    
-    //关闭按钮
-    lazy var closeBtn: UIButton = {
-        let btn = UIButton(type: UIButton.ButtonType.custom)
-        let img = UIImage(named: "Close")!
-        btn.setBackgroundImage(img, for: .normal)
-        btn.titleLabel?.textColor = UIColor.black
-        btn.frame = CGRect(x: 20, y: 40, width: img.size.width, height: img.size.height)
-        btn.addTarget(self, action: #selector(closeAction), for: UIControl.Event.touchUpInside)
-        return btn
-    }()
-    
-    lazy var topNavView: CommonTopNavView = {
-        let rect = CGRect(x: 0, y: 0, width: ScreenW, height: kTopNavViewH)
-        let topView = CommonTopNavView(frame: rect, title: "快递查询")
-        return topView
-    }()
     
     //扫码
     lazy var scanBtn: UIButton = {
@@ -109,10 +91,7 @@ class EXPressController: UIViewController {
 extension EXPressController {
     
     private func setupUI() {
-        self.view.backgroundColor = UIColor.white
-        
-        self.view.addSubview(topNavView)
-        self.view.addSubview(closeBtn)
+        topNavView.setTitle(title: "快递查询")
         self.view.addSubview(scanBtn)
         self.view.addSubview(expressCodeInputField)
         self.view.addSubview(expressSelcteBtn)
@@ -159,12 +138,6 @@ extension EXPressController {
 
     }
     
-    //关闭
-    @objc func closeAction() {
-        self.dismiss(animated: true, completion: {
-            
-        })
-    }
     
     @objc func scanAcrion() {
         

@@ -15,7 +15,7 @@ class CommonTopNavView: UIView {
         let label = UILabel()
         let labelY = kTopNavViewH - 10 - 40
         label.frame = CGRect(x: kMagin, y: labelY, width: ScreenW-kMagin*2, height: 40)
-        label.font = UIFont.systemFont(ofSize: 40)
+        label.font = UIFont.systemFont(ofSize: 30)
         label.textColor = UIColor.init(hex: "#32384E")
         label.textAlignment = .left
         return label
@@ -37,6 +37,10 @@ class CommonTopNavView: UIView {
         self.layer.shadowRadius = 4
         self.layer.shadowOffset = CGSize(width: 4, height: 4)
         
+    }
+    
+    func setTitle(title: String) {
+        self.titleLabel.text = title
     }
 
     required init?(coder aDecoder: NSCoder) {

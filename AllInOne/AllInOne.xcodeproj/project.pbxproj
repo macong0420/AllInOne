@@ -44,6 +44,7 @@
 		E260A59221FB1A4E00DFD1BB /* QRCodeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260A59121FB1A4E00DFD1BB /* QRCodeUtil.swift */; };
 		E260A59421FB1AAD00DFD1BB /* QRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260A59321FB1AAD00DFD1BB /* QRCodeController.swift */; };
 		E29D1D5421FEFBC400316F36 /* ScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D1D5321FEFBC400316F36 /* ScanController.swift */; };
+		E2F6AB892226399800CE7D9C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F6AB882226399800CE7D9C /* BaseViewController.swift */; };
 		E2FB3048221D63C400BC2433 /* QRCodeImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FB3047221D63C400BC2433 /* QRCodeImageController.swift */; };
 		E2FC0DB8221C037E005B4BE4 /* CommonTopNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FC0DB7221C037E005B4BE4 /* CommonTopNavView.swift */; };
 /* End PBXBuildFile section */
@@ -111,6 +112,7 @@
 		E260A59321FB1AAD00DFD1BB /* QRCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeController.swift; sourceTree = "<group>"; };
 		E29D1D5321FEFBC400316F36 /* ScanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanController.swift; sourceTree = "<group>"; };
 		E2C6F6B721A551C200BFCDA4 /* Objc-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objc-Bridge-Header.h"; sourceTree = "<group>"; };
+		E2F6AB882226399800CE7D9C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E2FB3047221D63C400BC2433 /* QRCodeImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeImageController.swift; sourceTree = "<group>"; };
 		E2FC0DB7221C037E005B4BE4 /* CommonTopNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonTopNavView.swift; sourceTree = "<group>"; };
 		FFF19CD84A001EEE63D337EE /* Pods-AllInOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllInOne.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AllInOne/Pods-AllInOne.debug.xcconfig"; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				E256259B21A4F672004A213C /* ViewController.swift */,
 				E2602CB721A7A3F8008A3A06 /* CommonModel.swift */,
 				E2FC0DB7221C037E005B4BE4 /* CommonTopNavView.swift */,
+				E2F6AB882226399800CE7D9C /* BaseViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				E2144A8222013F0100EBFD78 /* AddTaskController.swift in Sources */,
 				E29D1D5421FEFBC400316F36 /* ScanController.swift in Sources */,
 				E2FB3048221D63C400BC2433 /* QRCodeImageController.swift in Sources */,
+				E2F6AB892226399800CE7D9C /* BaseViewController.swift in Sources */,
 				E260A59021FAFAEC00DFD1BB /* ExpressModel.swift in Sources */,
 				E215D78A21F086E10008D9F1 /* ExtenSion.swift in Sources */,
 				E256259C21A4F672004A213C /* ViewController.swift in Sources */,

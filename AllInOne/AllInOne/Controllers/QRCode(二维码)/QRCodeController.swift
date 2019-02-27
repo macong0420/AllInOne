@@ -9,27 +9,10 @@
 import UIKit
 let kInputViewH: CGFloat = 120
 
-class QRCodeController: UIViewController {
+class QRCodeController: BaseViewController {
 
     
     var inputStr = ""
-    
-    //关闭按钮
-    lazy var closeBtn: UIButton = {
-        let btn = UIButton(type: UIButton.ButtonType.custom)
-        let img = UIImage(named: "Close")!
-        btn.setBackgroundImage(img, for: .normal)
-        btn.titleLabel?.textColor = UIColor.black
-        btn.frame = CGRect(x: 20, y: 40, width: img.size.width, height: img.size.height)
-        btn.addTarget(self, action: #selector(closeAction), for: UIControl.Event.touchUpInside)
-        return btn
-    }()
-    
-    lazy var topNavView: CommonTopNavView = {
-        let rect = CGRect(x: 0, y: 0, width: ScreenW, height: kTopNavViewH)
-        let topView = CommonTopNavView(frame: rect, title: "二维码生成")
-        return topView
-    }()
     
     lazy var inputTextView: UITextView = {
         let input = UITextView(frame: CGRect(x: 40, y: kTopNavViewH + 40, width: ScreenW-80, height: kInputViewH))
@@ -60,17 +43,14 @@ class QRCodeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        topNavView.setTitle(title: "二维码生成")
         setupUI()
     }
 
     func setupUI() {
-        self.view.backgroundColor = UIColor.white
         
-        self.view.addSubview(createBtn)
-        self.view.addSubview(topNavView)
         self.view.addSubview(inputTextView)
-        self.view.addSubview(closeBtn)
+        self.view.addSubview(createBtn)
     }
     
     func checkBtnStatus() {
@@ -90,15 +70,7 @@ class QRCodeController: UIViewController {
         let qrcodeImgVc = QRCodeImageController.init(contenString: inputStr)
         self.present(qrcodeImgVc, animated: true, completion: nil)
     }
-    
-   
-    
-    //关闭
-    @objc func closeAction() {
-        self.dismiss(animated: true, completion: {
-            
-        })
-    }
+
 }
 
 
