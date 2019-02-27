@@ -20,15 +20,16 @@ class RACRandomController: BaseViewController {
         return label
     }()
     
+    private lazy var firstShadowView: BaseShadowView = {
+        let view = BaseShadowView(frame: CGRect(x: kMagin, y: kTopNavViewH+40+40, width: inputW, height: 60))
+        return view
+    }()
+    
     private lazy var firstInput: UITextField = {
         let input = UITextField()
-        input.frame = CGRect(x: kMagin, y: kTopNavViewH+40+40, width: inputW, height: 40)
-        input.layer.shadowColor = UIColor.init(hex: "#ececec").cgColor
-        input.layer.shadowOpacity = 0.9
-        input.layer.shadowRadius = 10
         input.delegate = self
         input.keyboardType = .numberPad
-        input.backgroundColor = UIColor.white
+        input.backgroundColor = UIColor.clear
         input.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
         input.leftViewMode = .always
         input .addTarget(self, action: #selector(firstInputChange(iputField:)), for: UIControl.Event.editingChanged)
@@ -36,15 +37,16 @@ class RACRandomController: BaseViewController {
         return input
     }()
     
+    private lazy var secondShadowView: BaseShadowView = {
+        let view = BaseShadowView(frame: CGRect(x: kMagin+inputW+100, y: kTopNavViewH+40+40, width: inputW, height: 60))
+        return view
+    }()
+    
     private lazy var secondInput: UITextField = {
         let input = UITextField()
-        input.frame = CGRect(x: kMagin+inputW+100, y: kTopNavViewH+40+40, width: inputW, height: 40)
-        input.layer.shadowColor = UIColor.init(hex: "#ececec").cgColor
-        input.layer.shadowOpacity = 0.9
-        input.layer.shadowRadius = 10
         input.delegate = self
         input.keyboardType = .numberPad
-        input.backgroundColor = UIColor.white
+        input.backgroundColor = UIColor.clear
         input.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
         input .addTarget(self, action: #selector(secondInputChange(iputField:)), for: UIControl.Event.editingChanged)
         input.leftViewMode = .always
@@ -90,10 +92,15 @@ class RACRandomController: BaseViewController {
     
     private func setupUI() {
         view.addSubview(tipsLabel)
-        view.addSubview(firstInput)
-        view.addSubview(secondInput)
+        view.addSubview(firstShadowView)
+        view.addSubview(secondShadowView)
         view.addSubview(caculateBtn)
         view.addSubview(RandomLabel)
+        
+        firstInput.frame = CGRect(x: 2, y: 2, width: firstShadowView.bounds.size.width-4, height: firstShadowView.bounds.size.height-4)
+        secondInput.frame = CGRect(x: 2, y: 2, width: secondShadowView.bounds.size.width-4, height: secondShadowView.bounds.size.height-4)
+        firstShadowView.addSubview(firstInput)
+        secondShadowView.addSubview(secondInput)
     }
     
     

@@ -73,6 +73,9 @@ extension HomeNavController : UICollectionViewDelegate,UICollectionViewDataSourc
         } else if item == 3 {
             let dakaVC = DAKAController()
             self.present(dakaVC, animated: true, completion: nil)
+        } else if item == 4 {
+            let calenderVC = CalendarController()
+            self.present(calenderVC, animated: true, completion: nil)
         }
         
         /*
@@ -118,8 +121,8 @@ extension HomeNavController {
     private func initData() {
 //        itemTitleArray = ["万年历","二维码生成","精美图片","天气预报","快递查询","手机归属地","wifi密码查看"]
 //        itemIconArray = ["HomeCalernser","HomeQRCode","HomeBuatufulImg","HomeWeather","HomeKuaidi","HomePhone","wifi"]
-        itemTitleArray = ["二维码生成","快递查询","随机数生成","每日打卡"]
-        itemIconArray = ["HomeQRCode","HomeKuaidi","ARCRomCode","DAKA-Iocn"]
+        itemTitleArray = ["二维码生成","快递查询","随机数生成","每日打卡","打卡"]
+        itemIconArray = ["HomeQRCode","HomeKuaidi","ARCRomCode","DAKA-Iocn","DAKA-Iocn"]
 
     }
     

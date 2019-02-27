@@ -12,6 +12,8 @@ import Alamofire
 import SwiftyJSON
 
 let kCalenderTaskCellID = "kCalenderTaskCellID"
+private let kCalenderViewY = 0
+private let kCalenderViewH: CGFloat = 250
 
 class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     //属性
@@ -66,7 +68,7 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         let img = UIImage(named: "Close")!
         btn.setBackgroundImage(img, for: .normal)
         btn.titleLabel?.textColor = UIColor.black
-        btn.frame = CGRect(x: 20, y: 40, width: img.size.width, height: img.size.height)
+        btn.frame = CGRect(x: 20, y: 20, width: img.size.width, height: img.size.height)
         btn.addTarget(self, action: #selector(closeAction), for: UIControl.Event.touchUpInside)
         return btn
     }()
@@ -87,35 +89,45 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         return view
     }()
     
+    lazy var shadowView: BaseShadowView = {
+        let view = BaseShadowView(frame: CGRect(x: kMagin, y: 500, width: ScreenW-kMagin*2, height: 80))
+        return view
+    }()
+    
     var model: CalendarModel?
     var historyModel: CalendarHistoryContentModel? //历史上的今天
     
     //--------------------系统方法重写----------------------
     override func loadView() {
         let view = UIView(frame: UIScreen.main.bounds)
-        view.addGradientLayer(frame: view.bounds, colors: [UIColor(hex: "4D6AD5").cgColor, UIColor(hex: "9660A0").cgColor])
+//        view.addGradientLayer(frame: view.bounds, colors: [UIColor(hex: "4D6AD5").cgColor, UIColor(hex: "9660A0").cgColor])
+        view.backgroundColor = UIColor.white
         self.view = view
-        let height: CGFloat = UIDevice.current.model.hasPrefix("iPad") ? 400 : 300
-        let calendar = FSCalendar(frame: CGRect(x: 20, y: 80, width: self.view.bounds.width-40, height: height))
+        
+        let calendar = FSCalendar(frame: CGRect(x: 0, y: 0, width: ScreenW, height: kCalenderViewH))
         calendar.dataSource = self
         calendar.delegate = self
         calendar.backgroundColor = UIColor.clear
         self.view.addSubview(calendar)
         self.calendar = calendar
-        calendar.snp.makeConstraints { (make) in
-            make.top.equalTo(80)
-            make.left.equalTo(self.view.safeAreaLayoutGuide.snp.left)
-            make.right.equalTo(0)
-            make.height.equalTo(400)
-        }
-        
+
+        /* 不显示农历
         calendar.locale = NSLocale(localeIdentifier: "zh-CN") as Locale
         self.lunar = true
+        */
+        calendar.backgroundColor = BaseColor
+//        calendar.calendarHeaderView.backgroundColor = BaseColor //日期头部背景色
+        calendar.headerHeight = 60
+        
+        
         calendar.appearance.eventSelectionColor = UIColor.white
         calendar.appearance.eventOffset = CGPoint(x: 0, y: -7)
         calendar.appearance.weekdayFont = UIFont.boldSystemFont(ofSize: 14)
         calendar.appearance.weekdayTextColor = UIColor.black
         calendar.appearance.caseOptions = .weekdayUsesSingleUpperCase
+        
+        calendar.appearance.headerMinimumDissolvedAlpha = 0; //上一月 下一月 透明度 0 就是隐藏
+        calendar.appearance.headerDateFormat = "yyyy-MM"     //头部日期格式
         calendar.appearance.headerTitleColor = UIColor.black
         calendar.appearance.headerTitleFont = UIFont.boldSystemFont(ofSize: 18)
         calendar.swipeToChooseGesture.isEnabled = true
@@ -131,8 +143,10 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
         subViewsLayut()
         self.tableView.reloadData()
-        self.view.addSubview(emptyView)
-        self.view.bringSubviewToFront(emptyView)
+        
+        view.addSubview(shadowView)
+//        self.view.addSubview(emptyView)
+//        self.view.bringSubviewToFront(emptyView)
     }
     
     //添加task
@@ -160,11 +174,12 @@ extension CalendarController {
             make.top.equalTo(calendar.snp.bottom).offset(10)
             make.left.equalTo(0)
             make.right.equalTo(0)
-            make.height.equalTo(ScreenH-400)
+            make.height.equalTo(ScreenH-kCalenderViewH)
         }
     }
 }
 
+/*
 //网络请求
 extension CalendarController {
     
@@ -210,6 +225,7 @@ extension CalendarController {
         }
     }
 }
+ */
 
 //MARK:- calenda代理
 extension CalendarController: FSCalendarDataSource, FSCalendarDelegate {
@@ -250,6 +266,10 @@ extension CalendarController: FSCalendarDataSource, FSCalendarDelegate {
             }
         }
         return shouldBegin
+    }
+    
+    func maximumDate(for calendar: FSCalendar) -> Date {
+        return Date()
     }
 }
 

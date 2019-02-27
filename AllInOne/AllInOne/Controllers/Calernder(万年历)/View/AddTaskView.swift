@@ -20,7 +20,7 @@ class AddTaskView: UIView {
     
     lazy var titleLable: UILabel = {
         let label = UILabel()
-        label.text = "添加日程"
+        label.text = "我的打卡"
         label.frame = CGRect(x: 0, y: 40, width: ScreenW, height: 24)
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 24)

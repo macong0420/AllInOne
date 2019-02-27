@@ -7,7 +7,7 @@
 //
 
 import UIKit
-let kInputViewH: CGFloat = 120
+let kInputViewH: CGFloat = 220
 
 class QRCodeController: BaseViewController {
 
@@ -15,16 +15,18 @@ class QRCodeController: BaseViewController {
     var inputStr = ""
     
     lazy var inputTextView: UITextView = {
-        let input = UITextView(frame: CGRect(x: 40, y: kTopNavViewH + 40, width: ScreenW-80, height: kInputViewH))
-        input.layer.shadowColor = UIColor.init(hex: "#ececec").cgColor
-        input.layer.shadowOpacity = 0.9
-        input.layer.shadowRadius = 10
-        input.backgroundColor = UIColor.white
+        let input = UITextView(frame: CGRect(x: 0, y:0, width: ScreenW-80, height: kInputViewH))
+        input.backgroundColor = UIColor.clear
         input.keyboardType = .numberPad
         input.font = UIFont.systemFont(ofSize: 20)
         input.delegate = self
         input.becomeFirstResponder()
         return input
+    }()
+    
+    lazy var inputContentView: BaseShadowView = {
+        let view = BaseShadowView(frame: CGRect(x: kMagin, y: kTopNavViewH+kMagin, width: ScreenW-kMagin*2, height: kInputViewH))
+        return view
     }()
     
     lazy var createBtn: UIButton = {
@@ -49,7 +51,8 @@ class QRCodeController: BaseViewController {
 
     func setupUI() {
         
-        self.view.addSubview(inputTextView)
+        self.view.addSubview(inputContentView)
+        inputContentView.insertView(view: inputTextView)
         self.view.addSubview(createBtn)
     }
     

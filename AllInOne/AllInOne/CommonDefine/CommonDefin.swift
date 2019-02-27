@@ -29,6 +29,8 @@ let kTopNavViewH: CGFloat = 150
 var StatusBarH : CGFloat = isIPhoneXType() ? 44 : 20
 var NavgationH : CGFloat = isIPhoneXType() ? 88 : 64
 
+let BaseColor = UIColor.init(hex: "#32384E")
+
 
 func isIPhoneXType() -> Bool {
     guard #available(iOS 11.0, *) else {
