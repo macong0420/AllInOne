@@ -160,9 +160,7 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         do {
             let dakaInfos: [DakaInfo] = try dataBase.getObjects(fromTable: BaseDakaTable)
             if dakaInfos.count > 0 {
-                dakaInfoS += dakaInfos
-//                let dakaInfo = dakaInfos.last
-//                createDakaView(dakaInfo:dakaInfo ?? DakaInfo())
+                dakaInfoS = dakaInfos.reversed()
             }
         } catch {
             print("查找失败")
