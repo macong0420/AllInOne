@@ -12,5 +12,6 @@ pod 'Alamofire'
 pod 'HRQRCodeScanTool'
 pod 'SteviaLayout'
 pod 'CLToast'
+pod 'WCDB.swift'
 
 end
