@@ -44,6 +44,8 @@
 		E260A59221FB1A4E00DFD1BB /* QRCodeUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260A59121FB1A4E00DFD1BB /* QRCodeUtil.swift */; };
 		E260A59421FB1AAD00DFD1BB /* QRCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E260A59321FB1AAD00DFD1BB /* QRCodeController.swift */; };
 		E29D1D5421FEFBC400316F36 /* ScanController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D1D5321FEFBC400316F36 /* ScanController.swift */; };
+		E29F5B712227CA6B00387320 /* DakaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F5B702227CA6B00387320 /* DakaInfo.swift */; };
+		E29F5B732227E21200387320 /* DakaInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29F5B722227E21200387320 /* DakaInfoView.swift */; };
 		E2F6AB892226399800CE7D9C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F6AB882226399800CE7D9C /* BaseViewController.swift */; };
 		E2F6AB8C22263B7700CE7D9C /* DAKAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F6AB8B22263B7700CE7D9C /* DAKAController.swift */; };
 		E2F6AB8E2226739100CE7D9C /* BaseShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F6AB8D2226739100CE7D9C /* BaseShadowView.swift */; };
@@ -113,6 +115,8 @@
 		E260A59121FB1A4E00DFD1BB /* QRCodeUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeUtil.swift; sourceTree = "<group>"; };
 		E260A59321FB1AAD00DFD1BB /* QRCodeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeController.swift; sourceTree = "<group>"; };
 		E29D1D5321FEFBC400316F36 /* ScanController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanController.swift; sourceTree = "<group>"; };
+		E29F5B702227CA6B00387320 /* DakaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DakaInfo.swift; sourceTree = "<group>"; };
+		E29F5B722227E21200387320 /* DakaInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DakaInfoView.swift; sourceTree = "<group>"; };
 		E2C6F6B721A551C200BFCDA4 /* Objc-Bridge-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Objc-Bridge-Header.h"; sourceTree = "<group>"; };
 		E2F6AB882226399800CE7D9C /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		E2F6AB8B22263B7700CE7D9C /* DAKAController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAKAController.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			children = (
 				E230891821F1AAF70098810B /* CalendarController.swift */,
 				E2144A8122013F0100EBFD78 /* AddTaskController.swift */,
+				E29F5B702227CA6B00387320 /* DakaInfo.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -230,6 +235,7 @@
 				E21820B522004C230050B7D1 /* CalenderTaskCell.swift */,
 				E21820B722005BC90050B7D1 /* TaskEmptyView.swift */,
 				E2144A832201803600EBFD78 /* AddTaskView.swift */,
+				E29F5B722227E21200387320 /* DakaInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -604,6 +610,7 @@
 				E230892521F1AAF80098810B /* CalendarHistoryModel.swift in Sources */,
 				E260A58E21FAFAA000DFD1BB /* NetWorkTools.swift in Sources */,
 				E2F6AB8E2226739100CE7D9C /* BaseShadowView.swift in Sources */,
+				E29F5B712227CA6B00387320 /* DakaInfo.swift in Sources */,
 				E215D78821F0833F0008D9F1 /* HomeTopView.swift in Sources */,
 				E25FB944221FE10F0044B060 /* RACRandomView.swift in Sources */,
 				E230891021F172B60098810B /* HomeCollectionCell.swift in Sources */,
@@ -616,6 +623,7 @@
 				E2602CB821A7A3F8008A3A06 /* CommonModel.swift in Sources */,
 				E215D78521F07BF30008D9F1 /* HomeNavController.swift in Sources */,
 				E25625CF21A503E4004A213C /* CommonDefin.swift in Sources */,
+				E29F5B732227E21200387320 /* DakaInfoView.swift in Sources */,
 				E256259A21A4F672004A213C /* AppDelegate.swift in Sources */,
 				E230892821F1AAF80098810B /* LunarFormatter.swift in Sources */,
 				E2F6AB8C22263B7700CE7D9C /* DAKAController.swift in Sources */,

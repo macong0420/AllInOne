@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import WCDBSwift
 
 class AddTaskController: UIViewController {
     
@@ -42,6 +42,7 @@ class AddTaskController: UIViewController {
     
     
     var chooseDate: Date?
+    var dakaTitle = ""
     
     init(chooseDate: Date) {
         self.chooseDate = chooseDate
@@ -68,6 +69,39 @@ class AddTaskController: UIViewController {
     
     //保存
     @objc func saveAction() {
+        
+        dakaTitle = addTaskView.title
+        
+        if dakaTitle.count > 0 {
+           saveDataBase()
+            
+           self.dismiss(animated: true, completion: {
+                
+            })
+        }
+    }
+    
+    func saveDataBase() {
+        let dakaInfo = DakaInfo()
+        dakaInfo.dakaName = dakaTitle
+        dakaInfo.dakaDate = Date()
+        dakaInfo.dakaisNotify = true
+        
+        let dataBase: Database
+        dataBase = Database(withPath: BaseDBPath)
+        print("\(BaseDBPath)")
+        //建表
+        do {
+            try dataBase.create(table: BaseDakaTable, of: DakaInfo.self)
+        } catch {
+            print("table create failed error message: \(error)")
+        }
+        
+        do {
+            try dataBase.insert(objects: dakaInfo, intoTable: BaseDakaTable)
+        } catch {
+            print("table create failed error message: \(error)")
+        }
         
     }
 

@@ -42,6 +42,7 @@ class AddTaskView: UIView {
         
         let input = UITextField()
         input.placeholder = "标题"
+        input.addTarget(self, action: #selector(titleInputChange(iputField:)), for: UIControl.Event.editingChanged)
         input.font = UIFont.systemFont(ofSize: 20)
         return input
         
@@ -56,6 +57,8 @@ class AddTaskView: UIView {
 
     
     var chooseDate: Date?
+    
+    var title: String = ""
     
     init(chooseDate: Date) {
         self.chooseDate = chooseDate
@@ -106,7 +109,10 @@ class AddTaskView: UIView {
         }
     }
     
-    
+    @objc func titleInputChange(iputField: UITextField) {
+        
+        title = iputField.text ?? ""
+    }
 
     func setAddDate(date: Date) -> String {
         let dateFormater = DateFormatter()

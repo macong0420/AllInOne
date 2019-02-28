@@ -10,6 +10,7 @@ import UIKit
 import EventKit
 import Alamofire
 import SwiftyJSON
+import WCDBSwift
 
 let kCalenderTaskCellID = "kCalenderTaskCellID"
 private let kCalenderViewY = 0
@@ -44,9 +45,9 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     //日程数据
-    var taskArray: Array = [Any]() {
+    var dakaInfoS: Array = [DakaInfo]() {
         didSet {
-            
+            tableView.reloadData()
         }
     }
     
@@ -89,11 +90,6 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         return view
     }()
     
-    lazy var shadowView: BaseShadowView = {
-        let view = BaseShadowView(frame: CGRect(x: kMagin, y: 500, width: ScreenW-kMagin*2, height: 80))
-        return view
-    }()
-    
     var model: CalendarModel?
     var historyModel: CalendarHistoryContentModel? //历史上的今天
     
@@ -130,7 +126,7 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         calendar.appearance.headerDateFormat = "yyyy-MM"     //头部日期格式
         calendar.appearance.headerTitleColor = UIColor.black
         calendar.appearance.headerTitleFont = UIFont.boldSystemFont(ofSize: 18)
-        calendar.swipeToChooseGesture.isEnabled = true
+        calendar.swipeToChooseGesture.isEnabled = false
     }
     
     override func viewDidLoad() {
@@ -139,14 +135,46 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         self.view.addSubview(closeBtn)
         self.view.addSubview(tableView)
         self.view.addSubview(addTaskBtn)
-        self.view.addGestureRecognizer(self.scopeGesture)
-        self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
         subViewsLayut()
         self.tableView.reloadData()
         
-        view.addSubview(shadowView)
+// 上下滑动展开日历 禁用
+//        self.view.addGestureRecognizer(self.scopeGesture)
+//        self.tableView.panGestureRecognizer.require(toFail: self.scopeGesture)
+        
 //        self.view.addSubview(emptyView)
 //        self.view.bringSubviewToFront(emptyView)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        getDakaInfo()
+    }
+    
+    //检测是否有新建的打卡记录
+    func getDakaInfo() {
+        
+        let dataBase: Database
+        dataBase = Database(withPath: BaseDBPath)
+        
+        do {
+            let dakaInfos: [DakaInfo] = try dataBase.getObjects(fromTable: BaseDakaTable)
+            if dakaInfos.count > 0 {
+                dakaInfoS += dakaInfos
+//                let dakaInfo = dakaInfos.last
+//                createDakaView(dakaInfo:dakaInfo ?? DakaInfo())
+            }
+        } catch {
+            print("查找失败")
+        }
+    }
+    
+    func createDakaView(dakaInfo: DakaInfo) {
+        let dakaView = BaseShadowView(frame: CGRect(x: kMagin, y: kCalenderViewH + 20, width: ScreenW-kMagin*2, height: 80))
+        let dakaInfoView = DakaInfoView(frame: CGRect(x: 0, y: 0, width: ScreenW-kMagin*2, height: 80))
+        dakaInfoView.infoTitle = dakaInfo.dakaName
+        dakaView.addSubview(dakaInfoView)
+        view.addSubview(dakaView)
     }
     
     //添加task
@@ -281,15 +309,17 @@ extension CalendarController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskArray.count
+        return dakaInfoS.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 85
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
+        let dakaInfo = dakaInfoS[indexPath.row]
+        cell.infoTitle = dakaInfo.dakaName
         return cell
     }
     

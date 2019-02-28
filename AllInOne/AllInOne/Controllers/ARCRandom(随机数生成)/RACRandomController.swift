@@ -32,7 +32,7 @@ class RACRandomController: BaseViewController {
         input.backgroundColor = UIColor.clear
         input.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 20, height: 0))
         input.leftViewMode = .always
-        input .addTarget(self, action: #selector(firstInputChange(iputField:)), for: UIControl.Event.editingChanged)
+        input.addTarget(self, action: #selector(firstInputChange(iputField:)), for: UIControl.Event.editingChanged)
         input.text = "1"
         return input
     }()
