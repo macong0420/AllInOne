@@ -167,14 +167,6 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         }
     }
     
-    func createDakaView(dakaInfo: DakaInfo) {
-        let dakaView = BaseShadowView(frame: CGRect(x: kMagin, y: kCalenderViewH + 20, width: ScreenW-kMagin*2, height: 80))
-        let dakaInfoView = DakaInfoView(frame: CGRect(x: 0, y: 0, width: ScreenW-kMagin*2, height: 80))
-        dakaInfoView.infoTitle = dakaInfo.dakaName
-        dakaView.addSubview(dakaInfoView)
-        view.addSubview(dakaView)
-    }
-    
     //添加task
     @objc func addTaskBtnAction() {
     
