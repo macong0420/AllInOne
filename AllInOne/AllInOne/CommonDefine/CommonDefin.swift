@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import WCDBSwift
+
 
 //数据库地址
 let BaseDBPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! + "/daka.db"
 //打卡表
 let BaseDakaTable = "dakaTable"
+
+let BaseDakaDB = Database(withPath: BaseDBPath)
 
 let APPKEY = "28da3fa01d240"
 let EXPressAPPKEy = "e7285c2b-f97a-4b8c-9635-847ad3987854"

@@ -51,10 +51,9 @@ class DAKAController: BaseViewController {
         super.viewDidLoad()
         view.addSubview(tableView)
         view.addSubview(addBtn)
-        
         topNavView.setTitle(title: "每日打卡")
-        
-        getDakaInfo()
+        //刷新数据库
+        reloadDakaInfo()
     }
     
     @objc func addDakaAction() {
@@ -62,17 +61,16 @@ class DAKAController: BaseViewController {
         let cancelAction = UIAlertAction(title: "取消", style: .cancel) { (calcel) in
             
         }
+        
         let okAction = UIAlertAction(title: "确定", style: .default) { (ok) in
-            
             guard let title = alert.textFields?.first?.text else {return}
-            self.saveDataBase(title: title)
+            DBManager.shared.saveDataBase(title: title)
             
             //刷新数据
-            self.getDakaInfo()
+            self.reloadDakaInfo()
         }
         alert.addTextField { (input) in
             input.placeholder = "请输入打卡名称"
-            
         }
         
         alert.addAction(cancelAction)
@@ -85,54 +83,15 @@ class DAKAController: BaseViewController {
  //MARK:- 数据库相关
 extension DAKAController {
     //检测是否有新建的打卡记录
-    func getDakaInfo() {
-        
-        let dataBase: Database
-        dataBase = Database(withPath: BaseDBPath)
+    func reloadDakaInfo() {
         print("\(BaseDBPath)")
         do {
-            let dakaInfos: [DakaInfo] = try dataBase.getObjects(fromTable: BaseDakaTable)
+            let dakaInfos: [DakaInfo] = try BaseDakaDB.getObjects(fromTable: BaseDakaTable)
             if dakaInfos.count > 0 {
                 dakaInfoS = dakaInfos.reversed()
             }
         } catch {
             print("查找失败")
-        }
-    }
-    
-    func deleteDakaInfo(info: DakaInfo) {
-        let dataBase = Database(withPath: BaseDBPath)
-        do {
-            try dataBase.delete(fromTable: BaseDakaTable, where: DakaInfo.CodingKeys.dakaName.is(info.dakaName ?? ""), orderBy: nil, limit: 1, offset: 0)
-            getDakaInfo()
-        } catch {
-            print("删除失败")
-        }
-    }
-    
-    func saveDataBase(title: String) {
-        let dakaInfo = DakaInfo()
-        dakaInfo.dakaName = title
-        dakaInfo.dakaDate = Date()
-        dakaInfo.dakaisNotify = true
-        dakaInfo.identifier = 1
-        dakaInfo.isAutoIncrement = true
-        
-        
-        let dataBase: Database
-        dataBase = Database(withPath: BaseDBPath)
-        print("\(BaseDBPath)")
-        //建表
-        do {
-            try dataBase.create(table: BaseDakaTable, of: DakaInfo.self)
-        } catch {
-            print("table create failed error message: \(error)")
-        }
-        
-        do {
-            try dataBase.insert(objects: dakaInfo, intoTable: BaseDakaTable)
-        } catch {
-            print("table create failed error message: \(error)")
         }
     }
 }
@@ -169,7 +128,9 @@ extension DAKAController: UITableViewDelegate,UITableViewDataSource {
     //左滑删除
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let dakaInfo = dakaInfoS[indexPath.row]
-        deleteDakaInfo(info: dakaInfo)
+        if DBManager.shared.deleteDakaInfo(info: dakaInfo) {
+            reloadDakaInfo()
+        }
     }
     
     func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {

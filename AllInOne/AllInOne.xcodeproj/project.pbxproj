@@ -25,6 +25,7 @@
 		E230892821F1AAF80098810B /* LunarFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230891F21F1AAF70098810B /* LunarFormatter.swift */; };
 		E230892A21F1B2F60098810B /* EXPressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230892921F1B2F60098810B /* EXPressController.swift */; };
 		E230892C21F1BBF80098810B /* ExpressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E230892B21F1BBF80098810B /* ExpressCell.swift */; };
+		E2365E0022291A890048AE3E /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2365DFF22291A890048AE3E /* DBManager.swift */; };
 		E256259A21A4F672004A213C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E256259921A4F672004A213C /* AppDelegate.swift */; };
 		E256259C21A4F672004A213C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E256259B21A4F672004A213C /* ViewController.swift */; };
 		E256259F21A4F673004A213C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E256259D21A4F673004A213C /* Main.storyboard */; };
@@ -90,6 +91,7 @@
 		E230891F21F1AAF70098810B /* LunarFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LunarFormatter.swift; sourceTree = "<group>"; };
 		E230892921F1B2F60098810B /* EXPressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXPressController.swift; sourceTree = "<group>"; };
 		E230892B21F1BBF80098810B /* ExpressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpressCell.swift; sourceTree = "<group>"; };
+		E2365DFF22291A890048AE3E /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		E256259621A4F672004A213C /* AllInOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AllInOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E256259921A4F672004A213C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E256259B21A4F672004A213C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -213,7 +215,6 @@
 			children = (
 				E230891821F1AAF70098810B /* CalendarController.swift */,
 				E2144A8122013F0100EBFD78 /* AddTaskController.swift */,
-				E29F5B702227CA6B00387320 /* DakaInfo.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -232,10 +233,8 @@
 			children = (
 				E230891D21F1AAF70098810B /* CalendarInfoCell.swift */,
 				E230891E21F1AAF70098810B /* CalendarTodayHistoryCell.swift */,
-				E21820B522004C230050B7D1 /* CalenderTaskCell.swift */,
 				E21820B722005BC90050B7D1 /* TaskEmptyView.swift */,
 				E2144A832201803600EBFD78 /* AddTaskView.swift */,
-				E29F5B722227E21200387320 /* DakaInfoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -363,6 +362,9 @@
 			isa = PBXGroup;
 			children = (
 				E2F6AB8B22263B7700CE7D9C /* DAKAController.swift */,
+				E21820B522004C230050B7D1 /* CalenderTaskCell.swift */,
+				E29F5B702227CA6B00387320 /* DakaInfo.swift */,
+				E29F5B722227E21200387320 /* DakaInfoView.swift */,
 			);
 			path = "DAKA(每日打卡)";
 			sourceTree = "<group>";
@@ -370,6 +372,7 @@
 		E2FC101522278295000C8C7A /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				E2365DFF22291A890048AE3E /* DBManager.swift */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				E230892C21F1BBF80098810B /* ExpressCell.swift in Sources */,
 				E230892321F1AAF80098810B /* CalendarController.swift in Sources */,
 				E230892421F1AAF80098810B /* CalendarModel.swift in Sources */,
+				E2365E0022291A890048AE3E /* DBManager.swift in Sources */,
 				E230892721F1AAF80098810B /* CalendarTodayHistoryCell.swift in Sources */,
 				E2144A842201803600EBFD78 /* AddTaskView.swift in Sources */,
 				E2602CB821A7A3F8008A3A06 /* CommonModel.swift in Sources */,
