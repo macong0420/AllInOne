@@ -11,11 +11,12 @@ import WCDBSwift
 
 class DakaInfo: TableCodable {
 
-    var identifier: Int? = nil
-    var description: String? = nil
-    var dakaName: String? = nil
-    var dakaDate: Date? = nil
-    var dakaisNotify: Bool? = true
+    var identifier: Int? = nil     //标识ID
+    var description: String? = nil //描述
+    var dakaName: String? = nil    //打卡名称
+    var dakaDate: Date? = nil      //打卡时间
+    var dakaisNotify: Bool? = true //是否通知
+    var dakaSuccess: Bool? = false //是否打卡
     
     init() {
         identifier = 0
@@ -29,6 +30,7 @@ class DakaInfo: TableCodable {
         case dakaName
         case dakaDate
         case dakaisNotify
+        case dakaSuccess
         
         static var columnConstraintBindings: [CodingKeys: ColumnConstraintBinding]? {
             return [

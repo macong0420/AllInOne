@@ -102,7 +102,6 @@ extension DAKAController {
     
     func deleteDakaInfo(info: DakaInfo) {
         let dataBase = Database(withPath: BaseDBPath)
-        
         do {
             try dataBase.delete(fromTable: BaseDakaTable, where: DakaInfo.CodingKeys.dakaName.is(info.dakaName ?? ""), orderBy: nil, limit: 1, offset: 0)
             getDakaInfo()
@@ -117,6 +116,7 @@ extension DAKAController {
         dakaInfo.dakaDate = Date()
         dakaInfo.dakaisNotify = true
         dakaInfo.identifier = 1
+        dakaInfo.isAutoIncrement = true
         
         
         let dataBase: Database
