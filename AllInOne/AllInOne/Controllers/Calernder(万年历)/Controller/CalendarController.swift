@@ -44,24 +44,8 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         }
     }
     
-    //日程数据
-    var dakaInfoS: Array = [DakaInfo]() {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    
     var selectDate = Date()
     
-    //添加日程按钮
-    lazy var addTaskBtn: UIButton = {
-        let img = UIImage(named: "AddTask")!
-        let btn = UIButton(type: UIButton.ButtonType.custom)
-        btn.frame = CGRect(x: (ScreenW-img.size.width)/2, y: ScreenH-img.size.height-20, width: img.size.width, height: img.size.height)
-        btn.setBackgroundImage(img, for: UIControl.State.normal)
-        btn.addTarget(self, action: #selector(addTaskBtnAction), for: UIControl.Event.touchUpInside)
-        return btn
-    }()
     
     //关闭按钮
     lazy var closeBtn: UIButton = {
@@ -74,15 +58,6 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         return btn
     }()
     
-    lazy var tableView: UITableView = {
-        let tabV = UITableView(frame: CGRect(x: 0, y: kCalenderViewH+20, width: ScreenW, height: ScreenH-310), style: .plain)
-        tabV.backgroundColor = UIColor.white
-        tabV.register(CalenderTaskCell.self, forCellReuseIdentifier: kCalenderTaskCellID)
-        tabV.separatorColor = .clear
-        tabV.delegate = self
-        tabV.dataSource = self
-        return tabV
-    }()
     
     lazy var emptyView: TaskEmptyView = {
        
@@ -133,10 +108,6 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         super.viewDidLoad()
         self.title = "万年历"
         self.view.addSubview(closeBtn)
-        self.view.addSubview(tableView)
-        self.view.addSubview(addTaskBtn)
-        
-        self.tableView.reloadData()
         
 // 上下滑动展开日历 禁用
 //        self.view.addGestureRecognizer(self.scopeGesture)
@@ -146,36 +117,7 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
 //        self.view.bringSubviewToFront(emptyView)
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(false)
-        getDakaInfo()
-    }
-    
-    //检测是否有新建的打卡记录
-    func getDakaInfo() {
-        
-        let dataBase: Database
-        dataBase = Database(withPath: BaseDBPath)
-        
-        do {
-            let dakaInfos: [DakaInfo] = try dataBase.getObjects(fromTable: BaseDakaTable)
-            if dakaInfos.count > 0 {
-                dakaInfoS = dakaInfos.reversed()
-            }
-        } catch {
-            print("查找失败")
-        }
-    }
-    
-    //添加task
-    @objc func addTaskBtnAction() {
-    
-        let addVC = AddTaskController(chooseDate: self.selectDate)
-        
-        self.present(addVC, animated: true) {
-            
-        }
-    }
+
     
     //关闭
     @objc func closeAction() {
@@ -257,57 +199,25 @@ extension CalendarController: FSCalendarDataSource, FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
 
         calendar.frame.size.height = bounds.height
-        self.tableView.frame.origin.y = calendar.frame.maxY + 10
-        self.tableView.frame.size.height = ScreenH - bounds.height - 20
+        
         self.view.layoutIfNeeded()
     }
 
-    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        let shouldBegin = self.tableView.contentOffset.y <= -self.tableView.contentInset.top
-        if shouldBegin {
-            let velocity = self.scopeGesture.velocity(in: self.view)
-            switch self.calendar.scope {
-            case .month:
-                return velocity.y < 0
-            case .week:
-                return velocity.y > 0
-            }
-        }
-        return shouldBegin
-    }
+//    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+//        let shouldBegin = self.tableView.contentOffset.y <= -self.tableView.contentInset.top
+//        if shouldBegin {
+//            let velocity = self.scopeGesture.velocity(in: self.view)
+//            switch self.calendar.scope {
+//            case .month:
+//                return velocity.y < 0
+//            case .week:
+//                return velocity.y > 0
+//            }
+//        }
+//        return shouldBegin
+//    }
     
     func maximumDate(for calendar: FSCalendar) -> Date {
         return Date()
     }
-}
-
-extension CalendarController: UITableViewDelegate,UITableViewDataSource {
-    // MARK:- UITableViewDataSource
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dakaInfoS.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
-        cell.selectionStyle = .none
-        let dakaInfo = dakaInfoS[indexPath.row]
-        cell.infoTitle = dakaInfo.dakaName
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
-        cell.selecteBtn.isSelected = true
-    }
-    
 }

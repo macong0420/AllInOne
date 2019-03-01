@@ -22,14 +22,6 @@ class DAKAController: BaseViewController {
         return btn
     }()
     
-    private lazy var taskTableview: UITableView = {
-        let img = UIImage(named: "AddTask")!
-        let imgW = img.size.width
-        let ract = CGRect(x: 0, y: kTopNavViewH+10, width: ScreenW, height: ScreenH-kTopNavViewH-20-imgW)
-        let tableView = UITableView(frame: ract, style: UITableView.Style.plain)
-        return tableView
-    }()
-    
     lazy var tableView: UITableView = {
         let tabV = UITableView(frame: CGRect(x: 0, y: kTopNavViewH + 20, width: ScreenW, height: ScreenH-kTopNavViewH-80), style: .plain)
         tabV.backgroundColor = UIColor.white
@@ -54,6 +46,12 @@ class DAKAController: BaseViewController {
         topNavView.setTitle(title: "每日打卡")
         //刷新数据库
         reloadDakaInfo()
+    }
+    
+    func transtoDakaDetailVC(info: DakaInfo) {
+        let calendarVC = CalendarController()
+//        self.navigationController?.pushViewController(calendarVC, animated: true)
+        self.present(calendarVC, animated: true, completion: nil)
     }
     
     @objc func addDakaAction() {
@@ -121,9 +119,11 @@ extension DAKAController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
-        cell.selecteBtn.isSelected = true
-        cell.dakaInfo = dakaInfoS[indexPath.row]
+//        let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
+//        cell.selecteBtn.isSelected = true
+//        cell.dakaInfo = dakaInfoS[indexPath.row]
+//
+        transtoDakaDetailVC(info: dakaInfoS[indexPath.row])
     }
     
     
