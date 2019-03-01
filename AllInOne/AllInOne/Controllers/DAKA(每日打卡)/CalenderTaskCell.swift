@@ -35,6 +35,12 @@ class CalenderTaskCell: UITableViewCell {
         }
     }
     
+    var dakaInfo: DakaInfo? {
+        didSet {
+            selecteBtn.isSelected = dakaInfo?.dakaSuccess ?? false
+        }
+    }
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupUI()
@@ -53,6 +59,23 @@ class CalenderTaskCell: UITableViewCell {
     
     @objc func btnSeclecte(btn: UIButton) {
         btn.isSelected = !btn.isSelected
+        
+        let dakaINFO = self.dakaInfo!
+        dakaINFO.dakaSuccess = true
+        
+        if btn.isSelected {
+            //更新数据-打卡成功
+            do {
+                try BaseDakaDB.update(table: BaseDakaTable,
+                                      on: DakaInfo.Properties.dakaSuccess,
+                                      with: dakaINFO,
+                                      where: DakaInfo.Properties.dakaName.is(dakaINFO.dakaName ?? false))
+                print("更新成功")
+
+            } catch {
+                print("更新失败")
+            }
+        }
         
     }
     

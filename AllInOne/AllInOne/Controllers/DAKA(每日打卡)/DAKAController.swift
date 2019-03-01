@@ -115,6 +115,7 @@ extension DAKAController: UITableViewDelegate,UITableViewDataSource {
         let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
         cell.selectionStyle = .none
         let dakaInfo = dakaInfoS[indexPath.row]
+        cell.dakaInfo = dakaInfo
         cell.infoTitle = dakaInfo.dakaName
         return cell
     }
@@ -122,6 +123,7 @@ extension DAKAController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
         cell.selecteBtn.isSelected = true
+        cell.dakaInfo = dakaInfoS[indexPath.row]
     }
     
     
