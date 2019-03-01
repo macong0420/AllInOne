@@ -75,7 +75,7 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     }()
     
     lazy var tableView: UITableView = {
-        let tabV = UITableView(frame: CGRect(x: 0, y: 480, width: ScreenW, height: ScreenH-380), style: .plain)
+        let tabV = UITableView(frame: CGRect(x: 0, y: kCalenderViewH+20, width: ScreenW, height: ScreenH-310), style: .plain)
         tabV.backgroundColor = UIColor.white
         tabV.register(CalenderTaskCell.self, forCellReuseIdentifier: kCalenderTaskCellID)
         tabV.separatorColor = .clear
@@ -135,7 +135,7 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
         self.view.addSubview(closeBtn)
         self.view.addSubview(tableView)
         self.view.addSubview(addTaskBtn)
-        subViewsLayut()
+        
         self.tableView.reloadData()
         
 // 上下滑动展开日历 禁用
@@ -193,17 +193,7 @@ class CalendarController: UIViewController,UIGestureRecognizerDelegate {
     }
 }
 
-//控件约束
-extension CalendarController {
-    private func subViewsLayut() {
-        self.tableView.snp.makeConstraints { (make) in
-            make.top.equalTo(calendar.snp.bottom).offset(10)
-            make.left.equalTo(0)
-            make.right.equalTo(0)
-            make.height.equalTo(ScreenH-kCalenderViewH)
-        }
-    }
-}
+
 
 /*
 //网络请求
@@ -314,11 +304,18 @@ extension CalendarController: UITableViewDelegate,UITableViewDataSource {
         return 85
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
+        cell.selectionStyle = .none
         let dakaInfo = dakaInfoS[indexPath.row]
         cell.infoTitle = dakaInfo.dakaName
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell: CalenderTaskCell = tableView.dequeueReusableCell(withIdentifier: kCalenderTaskCellID)! as! CalenderTaskCell
+        cell.selecteBtn.isSelected = true
     }
     
 }

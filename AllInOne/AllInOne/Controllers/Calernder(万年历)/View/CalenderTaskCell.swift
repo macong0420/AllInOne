@@ -17,6 +17,18 @@ class CalenderTaskCell: UITableViewCell {
         return lable
     }()
     
+    lazy var selecteBtn: UIButton = {
+        let btn = UIButton()
+        let img = UIImage(named: "选择框")!
+        let imgEd = UIImage(named: "已选择")
+        let imgW = img.size.width
+        btn.frame = CGRect(x: ScreenW-kMagin*2-imgW-20, y: (80-imgW)/2, width: imgW, height: imgW)
+        btn.setBackgroundImage(img, for: UIControl.State.normal)
+        btn.setBackgroundImage(imgEd, for: UIControl.State.selected)
+        btn.addTarget(self, action: #selector(btnSeclecte(btn:)), for: UIControl.Event.touchUpInside)
+        return btn
+    }()
+    
     var infoTitle: String? {
         didSet {
             titleLabel.text = infoTitle
@@ -35,6 +47,13 @@ class CalenderTaskCell: UITableViewCell {
         dakaInfoView.addSubview(titleLabel)
         dakaView.addSubview(dakaInfoView)
         self.contentView.addSubview(dakaView)
+        self.contentView.addSubview(selecteBtn)
+    }
+    
+    
+    @objc func btnSeclecte(btn: UIButton) {
+        btn.isSelected = !btn.isSelected
+        
     }
     
     
