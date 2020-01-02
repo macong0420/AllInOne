@@ -5,14 +5,8 @@ PODS:
   - HRQRCodeScanTool (0.2.1)
   - Hue (4.0.0)
   - SnapKit (4.0.1)
-  - SQLiteRepairKit (1.2.1):
-    - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SteviaLayout (4.4.3)
   - SwiftyJSON (4.2.0)
-  - WCDB.swift (1.0.7.5):
-    - SQLiteRepairKit (~> 1.2.0)
-    - WCDBOptimizedSQLCipher (~> 1.2.0)
-  - WCDBOptimizedSQLCipher (1.2.1)
 
 DEPENDENCIES:
   - Alamofire
@@ -23,7 +17,17 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
   - SteviaLayout
   - SwiftyJSON
-  - WCDB.swift
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - CLToast
+    - FSCalendar
+    - HRQRCodeScanTool
+    - Hue
+    - SnapKit
+    - SteviaLayout
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
@@ -32,12 +36,9 @@ SPEC CHECKSUMS:
   HRQRCodeScanTool: d83388d0fadc0ef5364c656bb2aa8235125fd7d7
   Hue: afe18b4e819e2848e7d2d5b4b33f4d3f88dd921b
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
-  SQLiteRepairKit: 4d21bab9eff6a273f63da6815a0d1659e53f5bde
   SteviaLayout: ae5ee66101e03607a93c9b3773b84ab7ba7b3d17
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
-  WCDB.swift: 87aee41f5ca3aded9c6f9b68b0ef3e88918a5ee2
-  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
 
-PODFILE CHECKSUM: bac88f0435beb9d5e4755337e3c427781877e7c1
+PODFILE CHECKSUM: 83157a3429f4509a73fc8f46933e4464ffcb6984
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.6.1

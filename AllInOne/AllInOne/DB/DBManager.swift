@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WCDBSwift
 
 class DBManager: NSObject {
     

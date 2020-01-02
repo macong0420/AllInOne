@@ -10,7 +10,6 @@ import UIKit
 import EventKit
 import Alamofire
 import SwiftyJSON
-import WCDBSwift
 
 let kCalenderTaskCellID = "kCalenderTaskCellID"
 private let kCalenderViewY = 0

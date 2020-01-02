@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import WCDBSwift
 
 
 //数据库地址
